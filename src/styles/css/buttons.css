@@ -1,0 +1,36 @@
+.button-container {
+  text-align: center;
+}
+.button-container .button {
+  height: 50px;
+  width: 300px;
+}
+.button-container .primary-button {
+  background-color: #ACD9B2;
+  border: none;
+  border-radius: 8px;
+  height: 50px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.button-container .secondary-button {
+  background-color: white;
+  border: 1px solid #ACD9B2;
+  border-radius: 8px;
+  height: 50px;
+  color: #ACD9B2;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.button-container .third-button {
+  background-color: white;
+  border: none;
+  color: #ACD9B2;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=buttons.css.map */

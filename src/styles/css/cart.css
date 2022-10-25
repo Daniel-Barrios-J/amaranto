@@ -1,0 +1,84 @@
+.product-detail {
+  box-sizing: border-box;
+  width: 360px;
+  padding: 0 24px 24px;
+}
+.product-detail .my-order {
+  width: 100%;
+  height: auto;
+  display: grid;
+  place-items: center;
+}
+.product-detail .my-order .my-order-container {
+  width: 100%;
+}
+.product-detail .my-order .my-order-container .title-container {
+  display: flex;
+  align-items: center;
+}
+.product-detail .my-order .my-order-container .title-container img {
+  margin: 0 24px;
+}
+.product-detail .my-order .my-order-container .title-container .title {
+  font-size: var(--lg);
+  font-weight: bold;
+}
+.product-detail .my-order .my-order-container .my-order-content {
+  display: flex;
+  flex-direction: column;
+}
+.product-detail .my-order .my-order-container .my-order-content .order {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: center;
+  background-color: var(--text-input-field);
+  margin-bottom: 24px;
+  border-radius: 8px;
+  padding: 0 24px;
+}
+.product-detail .my-order .my-order-container .my-order-content .order p:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+}
+.product-detail .my-order .my-order-container .my-order-content .order p:nth-child(1) span {
+  font-size: var(--md);
+  font-weight: bold;
+}
+.product-detail .my-order .my-order-container .my-order-content .order p:nth-child(2) {
+  text-align: end;
+  font-weight: bold;
+}
+.product-detail .my-order .my-order-container .my-order-content .shopping-cart {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+.product-detail .my-order .my-order-container .my-order-content .shopping-cart figure {
+  margin: 0;
+}
+.product-detail .my-order .my-order-container .my-order-content .shopping-cart figure img {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.product-detail .my-order .my-order-container .my-order-content .shopping-cart p:nth-child(2) {
+  color: var(--very-light-pink);
+}
+.product-detail .my-order .my-order-container .my-order-content .shopping-cart p:nth-child(3) {
+  font-size: var(--md);
+  font-weight: bold;
+}
+@media (max-width: 640px) {
+  .product-detail {
+    width: 100%;
+  }
+  .product-detail .arrow {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=cart.css.map */

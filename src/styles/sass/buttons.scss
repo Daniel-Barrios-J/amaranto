@@ -1,0 +1,37 @@
+$hospitalGreen: #ACD9B2;
+$md: 16px;
+$sm: 14px;
+.button-container {
+  text-align: center;
+  .button {
+    height: 50px;
+    width: 300px;
+  }
+  .primary-button {
+    background-color: $hospitalGreen;
+    border: none;
+    border-radius: 8px;
+    height: 50px;
+    color: white;
+    font-size: $md;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .secondary-button {
+    background-color: white;
+    border: 1px solid $hospitalGreen;
+    border-radius: 8px;
+    height: 50px;
+    color: $hospitalGreen;
+    font-size: $md;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .third-button {
+    background-color: white;
+    border: none;
+    color: $hospitalGreen;
+    font-size: $sm;
+    cursor: pointer;
+  }
+}

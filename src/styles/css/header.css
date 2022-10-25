@@ -1,0 +1,73 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  border-bottom: 1px solid var(--very-light-pink);
+}
+nav .menu {
+  display: none;
+}
+nav .navbar {
+  display: flex;
+}
+nav .navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+nav .navbar a {
+  text-decoration: none;
+  color: var(--very-light-pink);
+  border: 1px solid var(--white);
+  padding: 8px;
+  border-radius: 8px;
+}
+nav .navbar a:hover {
+  color: var(--hopital-green);
+  border: 1px solid var(--hopital-green);
+}
+nav .navbar-left ul {
+  margin-left: 12px;
+}
+nav .navbar-left .logo {
+  width: 100px;
+}
+nav .navbar-right ul .navbar-email {
+  color: var(--very-light-pink);
+  font-size: var(--sm);
+  margin-right: 12px;
+}
+nav .navbar-right ul .navbar-shopping-cart {
+  position: relative;
+}
+nav .navbar-right ul .navbar-shopping-cart div {
+  width: 10px;
+  height: 10px;
+  background-color: var(--hopital-green);
+  border-radius: 50%;
+  font-size: 8px;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  top: -2px;
+  right: -1px;
+}
+@media (max-width: 640px) {
+  nav .menu {
+    display: block;
+    width: 28px;
+    height: 28px;
+  }
+  nav .navbar-left ul {
+    display: none;
+  }
+  nav .navbar-right .navbar-email {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

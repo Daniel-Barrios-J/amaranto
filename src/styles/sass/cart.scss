@@ -1,0 +1,95 @@
+
+.product-detail {
+  box-sizing: border-box;
+  width: 360px;
+  padding:0 24px 24px;
+  .my-order {
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+    
+    .my-order-container {
+      // display: grid;
+      // grid-template-rows: auto 1fr auto;
+      width: 100%;
+      .title-container {
+          display: flex;
+          align-items: center;
+        img {
+          margin: 0 24px;
+        }
+        .title {
+          font-size: var(--lg);
+          font-weight: bold;
+        }
+      }
+      .my-order-content {
+        display: flex;
+        flex-direction: column;
+        .order {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 12px;
+          align-items: center;
+          background-color: var(--text-input-field);
+          margin-bottom: 24px;
+          border-radius: 8px;
+          padding: 0 24px;
+          & p:nth-child(1) {
+            display: flex;
+            flex-direction: column;
+            & span {
+              font-size: var(--md);
+              font-weight: bold;
+            }
+          }
+          & p:nth-child(2) {
+            text-align: end;
+            font-weight: bold;
+          }
+        }
+        .shopping-cart {
+          display: grid;
+          grid-template-columns: auto 1fr auto auto;
+          gap: 12px;
+          margin-bottom: 16px;
+          align-items: center;
+          figure {
+            margin: 0;
+            img {
+              width: 70px;
+              height: 70px;
+              border-radius: 20px;
+              object-fit: cover;
+            }
+          }
+        }
+        .shopping-cart p:nth-child(2) {
+          color: var(--very-light-pink);
+        }
+        .shopping-cart p:nth-child(3) {
+          font-size: var(--md);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  // .primary-button {
+  //   background-color: var(--hopital-green);
+  //   border: none;
+  //   border-radius: 8px;
+  //   height: 50px;
+  //   color: var(--white);
+  //   font-size: var(--md);
+  //   font-weight: bold;
+  //   cursor: pointer;
+  //   width: 100%;
+  // }
+  @media (max-width:640px) {
+    width: 100%;
+    .arrow {
+      display: none;
+    }
+  }
+}

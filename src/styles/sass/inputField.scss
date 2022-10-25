@@ -1,0 +1,22 @@
+$sm: 14px;
+$md: 16px;
+$textInputField: #F7F7F7;
+
+.input-field-container {
+  display: flex;
+  flex-direction: column;
+  .label {
+    font-size: $sm;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  .input {
+    background-color: $textInputField;
+    border: none;
+    border-radius: 8px;
+    height: 32px;
+    font-size: $md;
+    padding: 6px;
+    margin-bottom: 12px;
+  }
+}

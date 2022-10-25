@@ -14,7 +14,7 @@ const EmailSent = () => {
         <button class="primary-button login-button">Login</button>
         <p class="resend">
           <span>Didn't receive de email?</span>
-          <a href="#">Resend</a>
+          <a href="/">Resend</a>
         </p>
       </div>
     </div>

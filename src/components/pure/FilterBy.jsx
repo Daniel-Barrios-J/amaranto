@@ -10,7 +10,6 @@ const FilterBy = () => {
         <option>Polular</option>
         <option>Mayor $</option>
         <option>Menor $</option>
-        <option>opcion $</option>
       </select>
       
     </div>

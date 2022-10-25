@@ -4,46 +4,32 @@ import Header from '../../components/container/Header';
 import SearchBar from '../../components/pure/SearchBar';
 import CotizationsComponent from '../../components/pure/cotizationsComponent';
 import FilterBy from '../../components/pure/FilterBy';
+import ProductCard from '../../components/pure/ProductCard';
 
 const Home = () => {
   return (
     <>
       <Header />
-      <SearchBar />
-      <CotizationsComponent />
-      <FilterBy />
-      <section class="main-container">
+      <div className='custom-container'>
+        <SearchBar />
+        <CotizationsComponent />
+      </div>
+        <FilterBy />
+      {/* <section class="main-container"> */}
         <div class="cards-container">
-          <div class="product-card">
-            <img src="https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" class="product-img" />
-            <div class="product-info">
-              <div>
-                <p>$120.00</p>
-                <p>Lampara</p>
-              </div>
-              <div>
-                <figure>
-                  <img src="../icons/bt_add_to_cart.svg" alt="" />
-                </figure>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <img src="https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" class="product-img" />
-            <div class="product-info">
-              <div>
-                <p>$120.00</p>
-                <p>Lampara</p>
-              </div>
-              <div>
-                <figure>
-                  <img src="../icons/bt_add_to_cart.svg" alt="" />
-                </figure>
-              </div>
-            </div>
-          </div>
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
         </div>
-      </section>
+      {/* </section> */}
     </>
     
   );

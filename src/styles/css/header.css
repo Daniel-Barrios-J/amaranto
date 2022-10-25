@@ -3,7 +3,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  height: 40px;
+  height: 60px;
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
 }
 nav .menu {
@@ -22,48 +22,46 @@ nav .navbar ul {
 nav .navbar a {
   text-decoration: none;
   color: var(--very-light-pink);
-  border: 1px solid var(--white);
-  padding: 8px;
-  border-radius: 8px;
-}
-nav .navbar a:hover {
-  color: var(--hopital-green);
-  border: 1px solid var(--hopital-green);
 }
 nav .navbar-left {
   height: 100%;
 }
+nav .navbar-left .logo {
+  height: 100%;
+  padding: 0;
+}
 nav .navbar-left ul {
   margin-left: 12px;
 }
-nav .navbar-left .logo {
-  height: 100%;
+nav .navbar-left li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 60%;
+  margin: 0 12px;
+  border: 1px solid var(--white);
+  border-radius: 8px;
+}
+nav .navbar-left li:hover {
+  border: 1px solid var(--hopital-green);
 }
 nav .navbar-right ul .navbar-email {
   color: var(--very-light-pink);
   font-size: var(--sm);
-  margin-right: 12px;
+  margin-right: 16px;
 }
 nav .navbar-right ul .navbar-shopping-cart {
   position: relative;
 }
-nav .navbar-right ul .navbar-shopping-cart a:hover {
-  border-color: white;
-}
 nav .navbar-right ul .navbar-shopping-cart img {
-  width: 100%;
-  font-size: 8px;
-  text-align: center;
-  font-weight: bold;
-  position: absolute;
-  top: -2px;
-  right: -1px;
+  height: 32px;
 }
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   nav .menu {
     display: block;
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
   }
   nav .menu img {
     width: 100%;

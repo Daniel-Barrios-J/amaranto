@@ -1,31 +1,24 @@
 import React from 'react';
 import '../../styles/css/menu.css'
+import { NavLink } from 'react-router-dom';
 
 const Menu = () => {
   return (
     <div class="mobile-menu">
       <h3>Menu</h3>
-      <ul class="ul-menu">
-        <li>
-          <a href="/">Inicio</a>
-        </li>
-        <li>
-          <a href="/">Arreglos</a>
-        </li>
-        <li>
-          <a href="/">Cotiza tu evento</a>
-        </li>
-        <li>
-          <a href="/">Arreglos personalizados</a>
-        </li>
+      <ul className='ul-menu'>
+        <li><NavLink to={'/'}>Inicio</NavLink></li>
+        <li><NavLink to={'/cotizacion-arreglos'}>Arreglos</NavLink></li>
+        <li><NavLink to={'/cotizacion-eventos'}>Eventos</NavLink></li>
+        <li><NavLink to={'/'}>Contacto</NavLink></li>
       </ul>
       
       <ul className='ul-account'>
         <li>
-          <a href="/">Mis compras</a>
+          <NavLink to={'/my-orders'}>Mis compras</NavLink>
         </li>
         <li>
-          <a href="/">Mi Cuenta</a>
+          <NavLink to={'/my-account'}>Mi Cuenta</NavLink>
         </li>
       </ul>
 

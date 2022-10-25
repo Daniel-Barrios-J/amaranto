@@ -11,3 +11,9 @@
     color: darkgray;
   }
 }
+@media (min-width: 640px) {
+  .filter-container {
+    transform: scale(1.2);
+    margin: 6px 0 20px 0;
+  }
+}

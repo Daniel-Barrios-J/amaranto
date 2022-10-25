@@ -1,10 +1,12 @@
 import React from 'react';
 import '../../styles/css/cart.css'
 import Button from '../../components/pure/Button'
+import Header from '../../components/container/Header';
 
 const Cart = () => {
   return (
     <div>
+      <Header />
       <div class="product-detail">
         <div class="my-order">
           <div class="my-order-container">

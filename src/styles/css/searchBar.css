@@ -1,7 +1,7 @@
 .search-container {
   margin: 14px auto;
   width: 84%;
-  height: 40px;
+  height: 50px;
   border-radius: 8px;
   background-color: #F7F7F7;
   display: flex;
@@ -12,11 +12,12 @@
   width: 80%;
   border: none;
   outline: none;
-  color: #C7C7C7;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.6);
 }
 .search-container .input-search::placeholder {
   color: #C7C7C7;
-  font-size: 12px;
+  font-size: 14px;
 }
 .search-container .icon-search {
   width: 20%;
@@ -29,6 +30,13 @@
 }
 .search-container .icon-search img {
   height: 48%;
+}
+
+@media all and (min-width: 640px) {
+  .search-container {
+    width: 30vw;
+    margin: 0;
+  }
 }
 
 /*# sourceMappingURL=searchBar.css.map */

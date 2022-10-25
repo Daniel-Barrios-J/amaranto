@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    height: 40px;
+    height: 60px;
     // border-bottom: 1px solid var(--very-light-pink);
     box-shadow: 2px 0 4px rgba($color: #000000, $alpha: 0.1);
     .menu {
@@ -22,56 +22,52 @@
       a {
         text-decoration: none;
         color: var(--very-light-pink);
-        border: 1px solid var(--white);
-        padding: 8px;
-        border-radius: 8px;
-      }
-      a:hover {        
-        color: var(--hopital-green);
-        border: 1px solid var(--hopital-green);
       }
     }
     .navbar-left {
       height: 100%;
+      .logo {
+        height: 100%;
+        padding: 0;
+      }
       ul {
         margin-left: 12px;
       }
-      .logo {
-        height: 100%;
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 60%;
+        margin: 0 12px;
+        border: 1px solid var(--white);
+        // padding: 8px;
+        border-radius: 8px;
+        &:hover {
+          border: 1px solid var(--hopital-green);
+        }
       }
     }
     .navbar-right {
-      
       ul {
         .navbar-email {
           color: var(--very-light-pink);
           font-size: var(--sm);
-          margin-right: 12px;
+          margin-right: 16px;
         }
         .navbar-shopping-cart {
           position: relative;
-          a:hover {
-            border-color: white;
-          }
           img {
-            width: 100%;
-            // background-color: var(--hopital-green);
-            // border-radius: 50%;
-            font-size: 8px;
-            text-align: center;
-            font-weight: bold;
-            position: absolute;
-            top: -2px;
-            right: -1px;
+            height: 32px;
           }
         }
       }
     }
-    @media (max-width: 640px) {
+    @media (max-width: 720px) {
       .menu {
         display: block;
-        width: 28px;
-        height: 28px;
+        width: 36px;
+        height: 36px;
         img {
           width: 100%;
         }

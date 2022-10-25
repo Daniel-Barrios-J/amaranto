@@ -1,10 +1,12 @@
 .mobile-menu {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   padding: 24px;
   background-color: white;
   height: 100vh;
+  width: 40%;
   transform: translateX(-100%);
   transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -26,12 +28,13 @@
 }
 .mobile-menu .ul-email {
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
 }
 .mobile-menu .ul-email .correo {
   font-weight: 300;
   color: var(--very-light-pink);
   margin-bottom: 12px;
+  font-size: 12px;
 }
 .mobile-menu .ul-email .sign-out-menu {
   color: var(--hopital-green);

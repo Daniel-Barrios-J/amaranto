@@ -1,11 +1,17 @@
 import React from 'react';
 import '../../styles/css/home.css'
 import Header from '../../components/container/Header';
+import SearchBar from '../../components/pure/SearchBar';
+import CotizationsComponent from '../../components/pure/cotizationsComponent';
+import FilterBy from '../../components/pure/FilterBy';
 
 const Home = () => {
   return (
     <>
       <Header />
+      <SearchBar />
+      <CotizationsComponent />
+      <FilterBy />
       <section class="main-container">
         <div class="cards-container">
           <div class="product-card">

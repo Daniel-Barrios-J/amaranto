@@ -1,0 +1,15 @@
+.filter-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.filter-container .select-filter {
+  border: none;
+  background-color: white;
+  outline: none;
+  text-align: center;
+  color: darkgray;
+}
+
+/*# sourceMappingURL=filterBy.css.map */

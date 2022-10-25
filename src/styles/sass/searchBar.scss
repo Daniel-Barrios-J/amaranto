@@ -1,0 +1,35 @@
+.search-container {
+  // padding: 0 36px;
+  margin: 14px auto;
+  width: 84%;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #F7F7F7;
+  display: flex;
+  align-items: center;
+  // border: solid 1px gray;
+  .input-search {
+    background-color: transparent;
+    // padding-left: px;
+    width: 80%;
+    border: none;
+    outline: none;
+    color: #C7C7C7;
+    &::placeholder {
+      color: #C7C7C7;
+      font-size: 12px;
+    }
+  }
+  .icon-search {
+    width: 20%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    img {
+      height: 48%;
+    }
+  }
+}

@@ -3,8 +3,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  height: 60px;
-  border-bottom: 1px solid var(--very-light-pink);
+  height: 40px;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
 }
 nav .menu {
   display: none;
@@ -30,11 +30,14 @@ nav .navbar a:hover {
   color: var(--hopital-green);
   border: 1px solid var(--hopital-green);
 }
+nav .navbar-left {
+  height: 100%;
+}
 nav .navbar-left ul {
   margin-left: 12px;
 }
 nav .navbar-left .logo {
-  width: 100px;
+  height: 100%;
 }
 nav .navbar-right ul .navbar-email {
   color: var(--very-light-pink);
@@ -44,11 +47,11 @@ nav .navbar-right ul .navbar-email {
 nav .navbar-right ul .navbar-shopping-cart {
   position: relative;
 }
-nav .navbar-right ul .navbar-shopping-cart div {
-  width: 10px;
-  height: 10px;
-  background-color: var(--hopital-green);
-  border-radius: 50%;
+nav .navbar-right ul .navbar-shopping-cart a:hover {
+  border-color: white;
+}
+nav .navbar-right ul .navbar-shopping-cart img {
+  width: 100%;
   font-size: 8px;
   text-align: center;
   font-weight: bold;
@@ -61,6 +64,12 @@ nav .navbar-right ul .navbar-shopping-cart div {
     display: block;
     width: 28px;
     height: 28px;
+  }
+  nav .menu img {
+    width: 100%;
+  }
+  nav .menu:hover .mobile-menu {
+    transform: translateX(0%);
   }
   nav .navbar-left ul {
     display: none;

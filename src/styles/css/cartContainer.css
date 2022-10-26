@@ -3,7 +3,6 @@
   background-color: white;
   width: 360px;
   padding: 0 24px 24px;
-  border-radius: 8px;
 }
 .product-detail .my-order {
   width: 100%;
@@ -74,13 +73,17 @@
   font-size: var(--md);
   font-weight: bold;
 }
-@media (max-width: 640px) {
-  .product-detail {
-    width: 100%;
-  }
-  .product-detail .arrow {
-    display: none;
-  }
+
+.desktop-view {
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  transform: translate(120%, 5%);
+  transition: all 200ms;
 }
 
-/*# sourceMappingURL=cart.css.map */
+.cart-desplegado {
+  transform: translate(0%, 5%);
+}
+
+/*# sourceMappingURL=cartContainer.css.map */

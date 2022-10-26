@@ -2,15 +2,14 @@ import React from 'react';
 import '../../styles/css/menu.css'
 import { NavLink } from 'react-router-dom';
 
-const Menu = () => {
+const Menu = ({className = ''}) => {
   return (
-    <div class="mobile-menu">
+    <div className={`mobile-menu ${className}`}>
       <h3>Menu</h3>
       <ul className='ul-menu'>
         <li><NavLink to={'/'}>Inicio</NavLink></li>
         <li><NavLink to={'/cotizacion-arreglos'}>Arreglos</NavLink></li>
         <li><NavLink to={'/cotizacion-eventos'}>Eventos</NavLink></li>
-        <li><NavLink to={'/'}>Contacto</NavLink></li>
       </ul>
       
       <ul className='ul-account'>
@@ -22,12 +21,12 @@ const Menu = () => {
         </li>
       </ul>
 
-      <ul class="ul-email">
+      <ul className="ul-email">
         <li>
-          <a href="/" class="correo">tucorreo@example.com</a>
+          <a href="/" className="correo">tucorreo@example.com</a>
         </li>
         <li>
-          <a href="/" class="sign-out-menu">Sign out</a>
+          <a href="/" className="sign-out-menu">Sign out</a>
         </li>
       </ul>
     </div>

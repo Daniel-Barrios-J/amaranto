@@ -4,7 +4,7 @@ import '../../styles/css/inputField.css'
 const InputField = ({ type, id, placeholder, textLabel }) => {
   return (
     <div className='input-field-container'>
-      <label for={id} className='label'>{textLabel}</label>
+      <label htmlFor={id} className='label'>{textLabel}</label>
       {
         type === 'text-area'
         ? <textarea id={id} className='input text-area' placeholder={placeholder} />

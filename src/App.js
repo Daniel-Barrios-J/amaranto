@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom'
-import Cart from './pages/cart/Cart'
+import CartPage from './pages/cart/CartPage'
 import Home from './pages/home/Home'
 import CotizacionArreglos from './pages/cotizacion-arreglos/CotizacionArreglos'
 import CotizacionEventos from './pages/cotizacion-eventos/CotizacionEventos'
@@ -21,7 +21,7 @@ function App() {
       <header className="App-header">
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/cart' element={<Cart />} />
+          <Route path='/cart' element={<CartPage />} />
           <Route path='/cotizacion-arreglos' element={<CotizacionArreglos />} />
           <Route path='/cotizacion-eventos' element={<CotizacionEventos />} />
           <Route path='/email-sent' element={<EmailSent />} />

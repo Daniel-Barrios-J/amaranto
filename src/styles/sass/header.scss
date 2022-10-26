@@ -57,6 +57,14 @@
         }
         .navbar-shopping-cart {
           position: relative;
+          .cart {
+            .product-detail {
+              box-shadow: 0 0 6px rgba($color: #000000, $alpha: 0.2);
+              z-index: 1;
+              transform: translate(120%, 5%);
+              transition: all 200ms;
+            }
+          }
           .cart-desplegado {
             .product-detail {
               transform: translate(0%, 5%);

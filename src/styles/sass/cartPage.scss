@@ -3,10 +3,10 @@
   background-color: white;
   width: 360px;
   padding:0 24px 24px;
-  border-radius: 8px;
-  box-shadow: 0 0 6px rgba($color: #000000, $alpha: 0.2);
-  z-index: 1;
-  transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
+  // border-radius: 8px;
+  // box-shadow: 0 0 6px rgba($color: #000000, $alpha: 0.2);
+  // z-index: 1;
+  // transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
   .my-order {
     width: 100%;
     height: auto;
@@ -96,10 +96,4 @@
       display: none;
     }
   }
-}
-.cart-desplegado {
-  .product-detail {
-    transform: translate(0%);
-  }
-
 }

@@ -3,10 +3,6 @@
   background-color: white;
   width: 360px;
   padding: 0 24px 24px;
-  border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .product-detail .my-order {
   width: 100%;
@@ -84,10 +80,6 @@
   .product-detail .arrow {
     display: none;
   }
-}
-
-.cart-desplegado .product-detail {
-  transform: translate(0%);
 }
 
 /*# sourceMappingURL=cartPage.css.map */

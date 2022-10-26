@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../styles/css/header.css'
 import { NavLink } from 'react-router-dom';
 import Menu from '../pure/Menu';
 
 const Header = () => {
+
+  const [menu, setMenu] = useState(false);
+  const desplegarMenu = () => {
+    setMenu(!menu)
+  }
+
+
   return (
     <nav className='header-container'>
-      <div className='menu'>
+      <div className={menu === true ? 'menu menu-desplegado' : 'menu'} onClick={desplegarMenu}>
         <img src="https://img.icons8.com/quill/50/000000/experimental-menu-quill.png" alt="icon-menu"/>
         <Menu />
       </div>

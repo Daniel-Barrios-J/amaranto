@@ -71,10 +71,10 @@
         img {
           width: 100%;
         }
-        &:hover {
-          .mobile-menu {
-            transform: translateX(0%);
-          }
+      }
+      .menu-desplegado {
+        .mobile-menu {
+          transform: translateX(0%);
         }
       }
       .navbar-left ul {

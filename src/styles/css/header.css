@@ -66,7 +66,7 @@ nav .navbar-right ul .navbar-shopping-cart img {
   nav .menu img {
     width: 100%;
   }
-  nav .menu:hover .mobile-menu {
+  nav .menu-desplegado .mobile-menu {
     transform: translateX(0%);
   }
   nav .navbar-left ul {

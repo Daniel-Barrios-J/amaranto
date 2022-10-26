@@ -16,5 +16,8 @@
   padding: 6px;
   margin-bottom: 12px;
 }
+.input-field-container .text-area {
+  height: 80px;
+}
 
 /*# sourceMappingURL=inputField.css.map */

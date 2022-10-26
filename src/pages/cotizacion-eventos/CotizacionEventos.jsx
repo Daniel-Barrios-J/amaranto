@@ -1,13 +1,12 @@
 import React from 'react';
 import Header from '../../components/container/Header';
+import EventosFormulario from '../../components/forms/EventosFormulario';
 
 const CotizacionEventos = () => {
   return (
     <div>
     <Header></Header>
-      <h1>
-        Cotizacion Eventos
-      </h1>
+      <EventosFormulario />
     </div>
   );
 }

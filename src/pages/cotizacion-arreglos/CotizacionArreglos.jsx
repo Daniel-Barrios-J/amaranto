@@ -1,13 +1,12 @@
 import React from 'react';
 import Header from '../../components/container/Header';
+import ArreglosFormulario from '../../components/forms/ArreglosFormulario';
 
 const CotizacionArreglos = () => {
   return (
     <div>
     <Header></Header>
-      <h1>
-        Cotizacion arreglos
-      </h1>
+      <ArreglosFormulario />
     </div>
   );
 }

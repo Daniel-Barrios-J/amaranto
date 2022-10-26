@@ -1,0 +1,20 @@
+.arreglos-formulario-container {
+  margin: 0 auto;
+  max-width: 400px;
+  height: 90vh;
+  padding: 0 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  .title-container {
+    text-align: center;
+    h2 {
+      margin: 0;
+    }
+    p {
+      font-size: 14px;
+      color: #C7C7C7;
+    }
+  }
+}

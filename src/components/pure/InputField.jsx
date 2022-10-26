@@ -5,11 +5,11 @@ const InputField = ({ type, id, placeholder, textLabel }) => {
   return (
     <div className='input-field-container'>
       <label for={id} className='label'>{textLabel}</label>
-      <input
-      type={type}
-      id={id}
-      className='input'
-      placeholder={placeholder} />
+      {
+        type === 'text-area'
+        ? <textarea id={id} className='input text-area' placeholder={placeholder} />
+        : <input type={type} id={id} className='input' placeholder={placeholder} />
+      }
     </div>
   );
 }

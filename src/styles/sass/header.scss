@@ -57,6 +57,11 @@
         }
         .navbar-shopping-cart {
           position: relative;
+          .cart-desplegado {
+            .product-detail {
+              transform: translate(0%, 5%);
+            }
+          }
           img {
             height: 32px;
           }

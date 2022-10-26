@@ -54,6 +54,9 @@ nav .navbar-right ul .navbar-email {
 nav .navbar-right ul .navbar-shopping-cart {
   position: relative;
 }
+nav .navbar-right ul .navbar-shopping-cart .cart-desplegado .product-detail {
+  transform: translate(0%, 5%);
+}
 nav .navbar-right ul .navbar-shopping-cart img {
   height: 32px;
 }

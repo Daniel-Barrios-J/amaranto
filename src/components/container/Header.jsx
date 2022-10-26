@@ -1,15 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/css/header.css'
 import { NavLink } from 'react-router-dom';
 import Menu from '../pure/Menu';
+import CartContainer from './CartContainer';
 
 const Header = () => {
 
   const [menu, setMenu] = useState(false);
+  const [cart, setCart] = useState(false);
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    setWidth(window.screen.width);
+  }, []);
+
+
   const desplegarMenu = () => {
     setMenu(!menu)
   }
-
+  const desplegarCart = () => {
+    setCart(!cart)
+  }
 
   return (
     <nav className='header-container'>
@@ -35,9 +46,23 @@ const Header = () => {
             tucorreo@host.com
           </li>
           <li class="navbar-shopping-cart">
-            <NavLink to={'/cart'}>
-              <img src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v1.png" alt="shopping cart" />
-            </NavLink>
+            {
+              width > 720
+              ? <div 
+                  className={
+                    cart === true
+                    ? 'cart-desplegado'
+                    : ''}
+                  onClick={desplegarCart}
+                >
+                  <img src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v1.png" alt="shopping cart" />
+                 <CartContainer />
+                </div>
+              : <NavLink to={'/cart'}>
+                  <img src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v1.png" alt="shopping cart" />
+                </NavLink>
+
+            }
           </li>
         </ul>
       </div>

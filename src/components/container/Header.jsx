@@ -3,21 +3,25 @@ import '../../styles/css/header.css'
 import { NavLink } from 'react-router-dom';
 import Menu from '../pure/Menu';
 import CartContainer from './CartContainer';
+import MenuDesktop from '../pure/MenuDesktop';
 
 const Header = () => {
 
   const [menu, setMenu] = useState(false);
   const [cart, setCart] = useState(false);
+  const [menuDesktop, setMenuDesktop] = useState(true);
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
     setWidth(window.screen.width);
   }, []);
 
-
+  
+  const desplegarMenuDesktop = () => {
+    setMenuDesktop(!menuDesktop)
+  }
   const desplegarMenu = () => {
     setMenu(!menu)
-    console.log(menu);
   }
   const desplegarCart = () => {
     setCart(!cart)
@@ -42,20 +46,23 @@ const Header = () => {
 
       <div className="navbar-right navbar">
         <ul>
-          <li className="navbar-email">
-            tucorreo@host.com
+          <li className="navbar-email" onClick={desplegarMenuDesktop}>
+            <img className={menuDesktop ? 'arrow-menu-desktop arrow-menu-desktop-none' : 'arrow-menu-desktop' } alt='arrow-menu-desktop' src="https://img.icons8.com/ios/50/000000/circled-chevron-right.png" />
+            <p>tucorreo@host.com</p>
+              {
+                width > 720 && <MenuDesktop className={ menuDesktop ? 'desktop-menu-none' : ''}/> 
+              }
           </li>
           <li className="navbar-shopping-cart">
             {
               width > 720
-              ? <div onClick={desplegarCart}>
-                  <img alt="shopping cart" src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v1.png" />
-                  <CartContainer className={cart === true ? 'desktop-view cart-desplegado' : 'desktop-view'} />
+              ? <div>
+                  <img onClick={desplegarCart} className='cart-header-desktop' alt="shopping cart" src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v1.png" />
+                  <CartContainer className={cart === true ? 'desktop-view cart-desplegado' : 'desktop-view'} closeCart={desplegarCart} />
                 </div>
               : <NavLink to={'/cart'}>
-                  <img src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v1.png" alt="shopping cart" />
+                  <img className='cart-header-desktop' src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v1.png" alt="shopping cart" />
                 </NavLink>
-
             }
           </li>
         </ul>

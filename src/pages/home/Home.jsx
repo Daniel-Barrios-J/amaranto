@@ -15,8 +15,8 @@ const Home = () => {
         <CotizationsComponent />
       </div>
         <FilterBy />
-      {/* <section class="main-container"> */}
-        <div class="cards-container">
+      {/* <section className="main-container"> */}
+        <div className="cards-container">
           <ProductCard />
           <ProductCard />
           <ProductCard />

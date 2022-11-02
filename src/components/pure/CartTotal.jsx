@@ -3,7 +3,7 @@ import '../../styles/css/cartTotal.css'
 
 const CartTotal = ({total}) => {
   return (
-    <div className="order">
+    <div className="total-order">
       <p>
         <span>Total</span>
       </p>

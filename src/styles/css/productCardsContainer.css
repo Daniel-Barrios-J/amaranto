@@ -1,0 +1,21 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 180px);
+  gap: 36px;
+  place-content: center;
+}
+
+@media (max-width: 640px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 140px);
+  }
+  .cards-container .product-card {
+    width: 140px;
+  }
+  .cards-container .product-card .product-img {
+    height: 140px;
+  }
+}
+
+/*# sourceMappingURL=productCardsContainer.css.map */

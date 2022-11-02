@@ -1,0 +1,10 @@
+@media (min-width: 640px) {
+  .custom-container {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 14px 0;
+  }
+}

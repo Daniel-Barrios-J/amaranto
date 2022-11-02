@@ -1,0 +1,28 @@
+.order-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  width: 300px;
+  cursor: pointer;
+}
+.order-card p:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+}
+.order-card p:nth-child(1) span:nth-child(1) {
+  font-size: var(--md);
+  font-weight: bold;
+}
+.order-card p:nth-child(1) span:nth-child(2) {
+  font-size: var(--sm);
+  color: var(--very-light-pink);
+}
+.order-card p:nth-child(2) {
+  text-align: end;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=orderCard.css.map */

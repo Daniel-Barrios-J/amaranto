@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Button from '../pure/Button'
-import '../../styles/css/buttons.css'
+// import '../../styles/css/buttons.css'
 import '../../styles/css/cotizationComponent.css'
 
 

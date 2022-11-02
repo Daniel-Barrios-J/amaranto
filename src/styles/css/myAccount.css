@@ -1,5 +1,5 @@
-.acount-form {
-  width: 100%;
+.account-form {
+  width: 100vw;
   height: 100vh;
   display: grid;
   place-items: center;

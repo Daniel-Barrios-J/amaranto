@@ -1,27 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../components/container/Header';
+import Button from '../../components/pure/Button';
+import InputField from '../../components/pure/InputField';
+// import { useNavigate } from 'react-router-dom';
 import '../../styles/css/myAccount.css'
 
 const MyAcount = () => {
+  
+  const [edit, setEdit] = useState(false);
+  // const navigate = useNavigate();
+
   return (
   <>
     <Header></Header>
-    <div class="account-form">
-      <div class="account-form-container">
-        <h1 class="title">My account</h1>
-        <form action="#" class="form">
+    <div className="account-form">
+      <div className="account-form-container">
+        <h1 className="title">My account</h1>
+        <div action="#" className="form">
           <div>
-            <label for="name" class="label">Name</label>
-            <p class="value">Pedrito Sola</p>
-        
-            <label for="email" class="label">Email address</label>
-            <p class="value">tucorreo@host.com</p>
-
-            <label for="password" class="label">Password</label>
-            <p class="value">***********</p>
+            <label for="name" className="label">Name</label>
+            <p className="value">Pedrito Sola</p>
+            {
+              edit
+              ? <InputField id={'email'} placeholder={'ejemplo@correo.com...'} textLabel={'Correo'} type={'email'} />
+              : 
+              <>
+                <label className="label">Correo</label>
+                <p className="value">tucorreo@host.com</p>
+              </>
+            }
+            {
+              edit
+              ? <InputField id={'email'} placeholder={'ejemplo@correo.com...'} textLabel={'Contraseña anterior'} type={'email'} />
+              : 
+                <>
+                  <label className="label">Password</label>
+                  <p className="value">***********</p>
+                </>
+              
+            }
+            {
+              edit &&
+              <div>
+                <InputField id={'new-password'} placeholder={'***********'} textLabel={'Nueva contraseña'} type={'password'} />
+                <InputField id={'repeat-new-password'} placeholder={'***********'} textLabel={'Repite la contraseña'} type={'password'} />
+              </div>
+            }
           </div>
-          <input type="submit" class="secondary-button edit-button" value="Edit" />
-        </form>
+          <Button buttonText={edit ? 'Confirmar' : 'Editar informacion' } typeButton={'secondary-button'} onClick={()=>setEdit(!edit)} />
+        </div>
       </div>
     </div>
   </>

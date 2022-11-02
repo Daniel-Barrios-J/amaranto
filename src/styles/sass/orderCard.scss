@@ -1,18 +1,22 @@
-.total-order {
+.order-card {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
   gap: 12px;
   align-items: center;
-  background-color: var(--text-input-field);
-  margin-bottom: 24px;
+  margin-bottom: 8px;
   border-radius: 8px;
-  padding: 0 24px;
+  width: 300px;
+  cursor: pointer;
   & p:nth-child(1) {
     display: flex;
     flex-direction: column;
-    & span {
+    & span:nth-child(1) {
       font-size: var(--md);
       font-weight: bold;
+    }
+    & span:nth-child(2) {
+      font-size: var(--sm);
+      color: var(--very-light-pink);
     }
   }
   & p:nth-child(2) {

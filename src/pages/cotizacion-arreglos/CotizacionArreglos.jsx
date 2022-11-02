@@ -5,7 +5,7 @@ import ArreglosFormulario from '../../components/forms/ArreglosFormulario';
 const CotizacionArreglos = () => {
   return (
     <div>
-    <Header></Header>
+      <Header></Header>
       <ArreglosFormulario />
     </div>
   );

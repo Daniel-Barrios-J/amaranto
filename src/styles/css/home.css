@@ -1,33 +1,3 @@
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 180px);
-  gap: 36px;
-  place-content: center;
-  padding: 0 16px;
-}
 
-@media (max-width: 640px) {
-  .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 140px);
-  }
-  .cards-container .product-card {
-    width: 140px;
-  }
-  .cards-container .product-card .product-img {
-    width: 100%;
-    height: 140px;
-  }
-}
-@media (min-width: 640px) {
-  .custom-container {
-    display: flex;
-    gap: 24px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    margin: 14px 0;
-  }
-}
 
 /*# sourceMappingURL=home.css.map */

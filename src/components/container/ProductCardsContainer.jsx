@@ -1,8 +1,12 @@
-import React, {useState} from 'react';
+//react, hooks, router
+import React, {useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //redux
 import { addItem } from '../../store/cartState/reducer';
+import { setDetails } from '../../store/producDetailState/reducer';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 //componentes
 import ProductCard from '../pure/ProductCard';
@@ -11,45 +15,49 @@ import ProductDetailContainer from './ProductDetailContainer';
 //estilos
 import '../../styles/css/productCardsContainer.css'
 
-//base datos local
+//base de datos local
 import products from '../../products.json'
 
 const ProductCardsContainer = () => {
-
+  
+  const [width, setWidth] = useState(0);
+  const details = useSelector(state => state.detailState)
   const dispatch = useDispatch();
-
-  const initialDetial = {
-    detailsClick: false,
-    product: {
-      "first_name": "ejemplo",
-      "last_name": "ejemplo",
-      "avatar": "https://reqres.in/img/faces/1-image.jpg"
-    }
-  }
-
-  const [details, setDetails] = useState(initialDetial);
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    setWidth(window.screen.width);
+  }, []);
 
   const itemDetails = (product) => {
-    console.log('seteando detalles')
-    setDetails(
-      {
-        ...details,
-        detailsClick: true,
-        product
-      }
-    );
+    dispatch(
+      setDetails(
+        {
+          ...details,
+          detailsClick: true,
+          product
+        }
+      )
+    )
+    console.log(details);
+    if (width < 720) {
+     return navigate('/product-detail')
+    }
   }
 
   return (
     <div className="cards-container">
+      {
+        width > 720 &&
       <ProductDetailContainer 
-        onClickClose={()=>{setDetails({...details, detailsClick: false});console.log('cerrando detalles')}} 
+        onClickClose={()=>{dispatch(setDetails({...details, detailsClick: false}));console.log('cerrando detalles')}} 
         classNameDetail={details.detailsClick ? 'product-detail-click' : ''}
         onClickAdd={()=>console.log(details)}
         price={details.product.first_name}
         description={details.product.last_name}
         image={details.product.avatar}
       />
+      }
       {
         products.map((product, index)=>{
           return <ProductCard

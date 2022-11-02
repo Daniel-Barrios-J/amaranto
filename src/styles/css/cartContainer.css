@@ -1,7 +1,6 @@
 .cart-detail {
-  box-sizing: border-box;
   background-color: white;
-  width: 360px;
+  width: 90%;
   padding: 0 24px 24px;
 }
 .cart-detail .my-order {
@@ -37,6 +36,7 @@
   transform: translate(0%, 2%);
   transition: all 200ms;
   opacity: 0;
+  width: 360px;
 }
 .desktop-view .my-order .my-order-container .title-container .close-arrow-cart {
   height: 18px;

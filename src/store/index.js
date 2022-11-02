@@ -11,14 +11,16 @@
 
 // REDUX TOOLKIT
 import { configureStore } from "@reduxjs/toolkit";
-import cart from '../store/cartState/reducer'
+import cart from '../store/cartState/reducer';
 import logState from "./loginState/reducer";
+import detailState from './producDetailState/reducer'
 
 
 const store = configureStore({
   reducer: {
     cart,
-    logState
+    logState,
+    detailState
   },
 })
 

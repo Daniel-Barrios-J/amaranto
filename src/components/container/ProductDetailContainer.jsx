@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Button from '../../components/pure/Button';
 import '../../styles/css/productDetailContainer.css'
 
 const ProductDetailContainer = (props) => {
+
+  const [width, setWidth] = useState(0);
+  useEffect(() => {
+    setWidth(window.screen.width);
+  }, []);
+
+  const desktopView = width > 720 ? 'product-detail-desktop' : '' 
+
   return (
-    <div className={`product-detail ${props.classNameDetail}`}>
+    <div className={`product-detail ${desktopView} ${props.classNameDetail}`}>
       <div className="product-detail-close" onClick={props.onClickClose}>
         <img src="https://img.icons8.com/ios/50/000000/cancel.png" alt="close" />
       </div>

@@ -1,42 +1,26 @@
 .product-detail {
-  width: 360px;
-  position: absolute;
-  right: 2%;
-  top: 20%;
-  padding-bottom: 16px;
+  // padding-bottom: 16px;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
-  z-index: 1;
-  transform: translateX(110%);
-  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // width: 360px;
+  // position: absolute;
+  // right: 2%;
+  // top: 20%;
+  // box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+  // z-index: 1;
+  // transform: translateX(110%);
+  // transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
   .product-detail-close {
-    background-color: var(--white);
-    width: 32px;
-    height: 32px;
-    position: absolute;
-    top: 2%;
-    left: 5%;
-    z-index: 1;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    background-color: transparent;
-    img {
-      width: 80%;
-      opacity: 0.3;
-      background-color: white;
-      border-radius: 50%;
-      box-shadow: 0 0 6px rgba($color: #000000, $alpha: 1);
-    }
-  }
-  .product-detail-close:hover {
-    cursor: pointer;
+    display: none;
   }
   .product-img {
-    width: 100%;
+    // margin: 18px;
+    width: 90%;
     height: 360px;
     object-fit: cover;
-    border-radius: 0 0 16px 16px;
     border-radius: 12px;
   }
   .product-info {
@@ -64,6 +48,41 @@
   }
   @media (max-width:640px) {
     width: 100%;
+  }
+}
+.product-detail-desktop {
+  width: 360px;
+  position: absolute;
+  right: 2%;
+  top: 20%;
+  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+  z-index: 1;
+  background-color: white;
+  transform: translateX(110%);
+  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  .product-detail-close {
+    background-color: var(--white);
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 5%;
+    left: 8%;
+    z-index: 1;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background-color: transparent;
+    display: block;
+    img {
+      width: 80%;
+      opacity: 0.3;
+      background-color: white;
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba($color: #000000, $alpha: 1);
+    }
+  }
+  .product-detail-close:hover {
+    cursor: pointer;
   }
 }
 .product-detail-click {

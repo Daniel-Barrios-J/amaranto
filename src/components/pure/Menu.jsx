@@ -1,8 +1,12 @@
 import React from 'react';
 import '../../styles/css/menu.css'
 import { NavLink } from 'react-router-dom';
+// import { useSelector } from 'react-redux';
 
 const Menu = ({className = ''}) => {
+
+  // const logState = useSelector(state => state.logState)
+  
   return (
     <div className={`mobile-menu ${className}`}>
       <h3>Menu</h3>

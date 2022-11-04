@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../../styles/css/menuDesktop.css'
 import { useDispatch } from 'react-redux';
 import { setLog } from '../../store/loginState/reducer';

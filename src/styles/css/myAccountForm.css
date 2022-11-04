@@ -14,6 +14,11 @@
   width: 50%;
   justify-self: center;
 }
+@media (max-width: 640px) {
+  .account-form-container .logo {
+    display: none;
+  }
+}
 .account-form-container .title {
   font-size: var(--lg);
   margin-bottom: 36px;
@@ -49,16 +54,6 @@
 .account-form-container .form .edit-button {
   margin-top: 16px;
   margin-bottom: 32px;
-}
-
-@media (max-width: 640px) {
-  .account-form-container {
-    height: 100%;
-  }
-  .account-form-container .form {
-    height: 100%;
-    justify-content: space-between;
-  }
 }
 
 /*# sourceMappingURL=myAccountForm.css.map */

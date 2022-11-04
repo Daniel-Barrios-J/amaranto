@@ -1,24 +1,25 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import '../../styles/css/menuDesktop.css'
 import { useDispatch } from 'react-redux';
 import { setLog } from '../../store/loginState/reducer';
 
 const MenuDesktop = ({className}) => {
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   return (
     <div className={`desktop-menu ${className}`}>
       <ul>
-        <li>
-          <NavLink to={'/my-orders'}>Mis compras</NavLink>
+        <li onClick={()=>navigate('/my-orders')}>
+          Mis compras
         </li>
-        <li>
-          <NavLink to={'/my-account'}>Mi cuenta</NavLink>
+        <li onClick={()=>navigate('/my-account')}>
+          Mi cuenta
         </li>
-        <li onClick={()=>dispatch(setLog({logged: false, textLog: 'Desconectado'}))}>
-          <NavLink to={'/login'}>Sign out</NavLink>
+        <li onClick={ () => {dispatch(setLog({logged: false, textLog: 'Desconectado'})); navigate('/'); } }>
+          Log Out
         </li>
       </ul>
     </div>

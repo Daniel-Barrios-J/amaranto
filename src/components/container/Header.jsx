@@ -38,13 +38,11 @@ const Header = () => {
         <Menu className={menu === true ? 'menu-desplegado' : ''} />
       </div>
       <div className="navbar-left navbar">
-        <NavLink to={'/'}>
-          <img src="https://scontent.fmex7-1.fna.fbcdn.net/v/t39.30808-6/281026779_112067488168572_2137207060159041813_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEeh_fkyhwhiuveIeaZ8Tkw_r1q36oWOev-vWrfqhY565i51wZteOliP0eqcMuyAQxlkkX8apbiVANxYTVclPuT&_nc_ohc=SSF47Eih7FQAX9KRJ5B&_nc_ht=scontent.fmex7-1.fna&oh=00_AfAnwyWVyZKRx3yiSdnUeu0AECSkFvt40SXL4ozoOQjqYA&oe=63653E37" alt="logo" className="logo" />
-        </NavLink>
+        <img onClick={()=>navigate('/')} alt="logo" className="logo" src="https://scontent.fmex7-1.fna.fbcdn.net/v/t39.30808-6/280951877_112559854786002_6645048926993550950_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeEXMDOvOHKjv7L5sIaLZfUl5KsPiLZKYb_kqw-ItkphvwKFrGU4OoOoHzlz9rgdwAZywN7JQ2Eg0PaRPP1111K-&_nc_ohc=c5RAnQ3iKpwAX8hzcwh&_nc_ht=scontent.fmex7-1.fna&oh=00_AfCeML1yjMBQjbXNpaHqN_Rv-E-5ED4LREWUS3yLy2BjWg&oe=636A3E24" />
         <ul>
-          <li><NavLink to={'/'}>Inicio</NavLink></li>
-          <li><NavLink to={'/cotizacion-arreglos'}>Arreglos</NavLink></li>
-          <li><NavLink to={'/cotizacion-eventos'}>Eventos</NavLink></li>
+          <li onClick={()=>navigate('/')}>Inicio</li>
+          <li onClick={()=>navigate('/cotizacion-arreglos')}>Arreglos</li>
+          <li onClick={()=>navigate('/cotizacion-eventos')}>Eventos</li>
         </ul>
       </div>
 

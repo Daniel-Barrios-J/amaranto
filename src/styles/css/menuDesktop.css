@@ -1,6 +1,7 @@
 .desktop-menu {
   position: absolute;
-  width: 180px;
+  z-index: 1;
+  width: 150px;
   border: 1px solid var(--very-light-pink);
   border-radius: 8px;
   padding: 30px;
@@ -19,28 +20,20 @@
 }
 .desktop-menu ul li {
   margin-bottom: 28px;
-}
-.desktop-menu ul li a {
-  color: var(--black);
-  text-decoration: none;
-  margin-bottom: 20px;
-  font-weight: bold;
-  height: 100%;
+  color: rgba(0, 0, 0, 0.5);
 }
 .desktop-menu ul li:last-child {
   padding-top: 20px;
   border-top: 1px solid var(--very-light-pink);
   margin: 0;
-}
-.desktop-menu ul li:last-child a {
   color: var(--hopital-green);
-  font-size: var(--xl);
   font-weight: normal;
   height: 100%;
 }
 
 .desktop-menu-none {
   transform: translate(100%, 60%) scale(0.9);
+  opacity: 0;
 }
 
 /*# sourceMappingURL=menuDesktop.css.map */

@@ -1,14 +1,18 @@
 .account-form {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   display: grid;
-  place-items: center;
+  place-content: center;
 }
 
 .account-form-container {
   display: grid;
   grid: auto 1fr auto/auto;
   width: 300px;
+}
+.account-form-container .logo {
+  width: 50%;
+  justify-self: center;
 }
 .account-form-container .title {
   font-size: var(--lg);
@@ -57,4 +61,4 @@
   }
 }
 
-/*# sourceMappingURL=myAccount.css.map */
+/*# sourceMappingURL=myAccountForm.css.map */

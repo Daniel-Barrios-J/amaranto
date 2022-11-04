@@ -31,18 +31,21 @@ nav {
       cursor: pointer;
     }
     ul {
-      margin-left: 12px;
+      margin-left: 48px;
+      gap: 36px;
     }
     li {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: grid;
+      place-items: center;
       width: 80px;
-      height: 60%;
-      margin: 0 12px;
+      height: 50%;
+      // margin: 0 12px;
+      // gap: 24px;
       border: 1px solid var(--white);
       // padding: 8px;
       border-radius: 8px;
+      cursor: pointer;
+      color: var(--very-light-pink);
       &:hover {
         border: 1px solid var(--hopital-green);
       }

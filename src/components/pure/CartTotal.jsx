@@ -1,14 +1,28 @@
 import React from 'react';
 import '../../styles/css/cartTotal.css'
 
-const CartTotal = ({total}) => {
+import { useSelector } from 'react-redux';
+
+const CartTotal = () => {
+
+  const cartState = useSelector( state => state.cart);
+
+  const totalCart = () => {
+    let priceArray = cartState.usuarios.map((product)=>product.price)
+    if (priceArray.length === 0) {
+      return '0'
+     }
+    let totalTemp = priceArray.reduce((a, b)=>a + b)
+    return totalTemp
+  }
+
   return (
     <div className="total-order">
       <p>
         <span>Total</span>
       </p>
       <p>
-        ${total}
+        ${totalCart()}.00
       </p>
     </div>
   );

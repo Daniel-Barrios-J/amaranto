@@ -1,12 +1,15 @@
 .order-card {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: auto 1fr auto;
-  gap: 12px;
   align-items: center;
   margin-bottom: 8px;
   border-radius: 8px;
   width: 300px;
+  padding: 0 24px;
+  border: solid 1px white;
   cursor: pointer;
+  transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .order-card p:nth-child(1) {
   display: flex;
@@ -23,6 +26,18 @@
 .order-card p:nth-child(2) {
   text-align: end;
   font-weight: bold;
+}
+.order-card .arrow {
+  width: 18px;
+  margin-left: 18px;
+  transform: rotate(90deg);
+  opacity: 0.3;
+}
+
+@media all and (min-width: 680px) {
+  .order-card:hover {
+    border: solid 1px var(--very-light-pink);
+  }
 }
 
 /*# sourceMappingURL=orderCard.css.map */

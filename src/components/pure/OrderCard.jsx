@@ -9,7 +9,7 @@ const OrderCard = ({date, articles, amount, onClick}) => {
         <span>{articles}</span>
       </p>
       <p>{ `$${amount}.00` }</p>
-      <img src="../icons/flechita.svg" alt="" />
+      <img alt='flecha-derecha' className='arrow' src="https://img.icons8.com/ios/50/null/circled-chevron-up.png"/>
     </div>
   );
 }

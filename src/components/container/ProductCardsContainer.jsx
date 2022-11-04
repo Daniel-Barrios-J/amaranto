@@ -61,11 +61,11 @@ const ProductCardsContainer = () => {
       {
         products.map((product, index)=>{
           return <ProductCard
-            onClickImg={()=>itemDetails(product)} 
+            onClickInfo={()=>itemDetails(product)} 
             onClickCart={()=>dispatch(addItem(product))}
             name={product.first_name}
-            description={product.last_name}
-            price={product.id} image={product.avatar}
+            description={product.first_name}
+            price={product.price} image={product.avatar}
             key={index}/>
         })
       }

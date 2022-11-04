@@ -1,13 +1,17 @@
 .account-form {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   display: grid;
-  place-items: center;
+  place-content: center;
 }
 .account-form-container {
   display: grid;
   grid: auto 1fr auto / auto;
   width: 300px;
+  .logo {
+    width: 50%;
+    justify-self: center;
+  }
   .title {
     font-size: var(--lg);
     margin-bottom: 36px;

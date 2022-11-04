@@ -51,14 +51,14 @@
 
 //REDUX TOOLKIT REDUCER CART
 import { createSlice } from "@reduxjs/toolkit";
-import usuarios from '../../usuarios.json'
+// import usuarios from '../../usuarios.json'
 // import axios from "axios";
 
 //slice contiene nombre y el action y reducer se combinan en una sola funcion
 const cartSlice = createSlice({
   name: 'cart',
   initialState: {
-    usuarios: usuarios
+    usuarios: []
   },
   reducers: {
     setCartList: (state, action) => {

@@ -18,18 +18,18 @@ const CartContainer = ({className = '', closeCart, removeToCart}) => {
     <div className={`cart-detail ${className}`}>
       <div className="my-order">
         <div className="my-order-container">
-          <div className="title-container">
-            <img onClick={closeCart} className="close-arrow-cart" src="https://img.icons8.com/android/24/000000/up-left-arrow.png" alt="arrow" />
+          <div className="title-container" onClick={closeCart} >
+            <img className="close-arrow-cart" src="https://img.icons8.com/android/24/000000/up-left-arrow.png" alt="arrow" />
             <p className="title">Shopping cart</p>
           </div>
     
           <div className="my-order-content">
             {
               state.usuarios.map((usuario, index) => {
-                return <CartItem onClick={()=>{console.log(`Eliminando del carrito objeto ${index}`); dispatch(removeItem(index))}} nameArticle={usuario.first_name} price={usuario.last_name} key={index} imgArticle={usuario.avatar} />
+                return <CartItem onClick={()=>{console.log(`Eliminando del carrito objeto ${index}`); dispatch(removeItem(index))}} nameArticle={usuario.first_name} price={usuario.price} key={index} imgArticle={usuario.avatar} />
               })
             }
-            <CartTotal total={'690.00'}/>
+            <CartTotal />
 
           </div>
         </div>

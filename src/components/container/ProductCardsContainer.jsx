@@ -12,19 +12,18 @@ import { useSelector } from 'react-redux';
 import ProductCard from '../pure/ProductCard';
 import ProductDetailContainer from './ProductDetailContainer';
 
+
 //estilos
 import '../../styles/css/productCardsContainer.css'
 
-//base de datos local
-import products from '../../products.json'
 
-const ProductCardsContainer = () => {
+const ProductCardsContainer = ({productList}) => {
   
   const [width, setWidth] = useState(0);
   const details = useSelector(state => state.detailState)
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     setWidth(window.screen.width);
   }, []);
@@ -46,29 +45,31 @@ const ProductCardsContainer = () => {
   }
 
   return (
-    <div className="cards-container">
-      {
-        width > 720 &&
-      <ProductDetailContainer 
-        onClickClose={()=>{dispatch(setDetails({...details, detailsClick: false}));console.log('cerrando detalles')}} 
-        classNameDetail={details.detailsClick ? 'product-detail-click' : ''}
-        onClickAdd={()=>console.log(details)}
-        price={details.product.first_name}
-        description={details.product.last_name}
-        image={details.product.avatar}
-      />
-      }
-      {
-        products.map((product, index)=>{
-          return <ProductCard
-            onClickInfo={()=>itemDetails(product)} 
-            onClickCart={()=>dispatch(addItem(product))}
-            name={product.first_name}
-            description={product.first_name}
-            price={product.price} image={product.avatar}
-            key={index}/>
-        })
-      }
+    <div className='product-cards-container'>
+      <div className="cards-container">
+        {
+          width > 720 &&
+        <ProductDetailContainer 
+          onClickClose={()=>{dispatch(setDetails({...details, detailsClick: false}));console.log('cerrando detalles')}} 
+          classNameDetail={details.detailsClick ? 'product-detail-click' : ''}
+          onClickAdd={()=>console.log(details)}
+          price={details.product.first_name}
+          description={details.product.last_name}
+          image={details.product.avatar}
+        />
+        }
+        {
+          productList.map((product, index)=>{
+            return <ProductCard
+              onClickInfo={()=>itemDetails(product)} 
+              onClickCart={()=>dispatch(addItem(product))}
+              name={product.first_name}
+              description={product.first_name}
+              price={product.price} image={product.avatar}
+              key={index}/>
+          })
+        }
+      </div>
     </div>
   );
 }

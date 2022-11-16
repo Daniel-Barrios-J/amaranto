@@ -7,9 +7,11 @@ const detailSlice = createSlice({
   initialState: {
     detailsClick: false,
     product: {
-      "first_name": "ejemplo",
-      "last_name": "ejemplo",
-      "avatar": "https://reqres.in/img/faces/1-image.jpg"
+      "name": "ejemplo",
+      "id": "ejemplo",
+      "description": "ejemplo",
+      "price": "ejemplo",
+      "imgProduct": "https://reqres.in/img/faces/1-image.jpg"
     }
   },
   reducers: {

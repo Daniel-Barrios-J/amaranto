@@ -1,10 +1,17 @@
+//react, router
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom'
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { BrowserRouter as Router } from 'react-router-dom'
+
+//components
 import App from './App';
-import { Provider } from 'react-redux';
+
+//redux
 import store from './store/index'
+import { Provider } from 'react-redux';
+
+//styles
+import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

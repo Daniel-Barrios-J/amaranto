@@ -1,7 +1,11 @@
 import React from 'react';
+
+//components
 import InputField from '../pure/InputField';
 import Button from '../pure/Button';
-import '../../styles/css/eventosFormulario.css'
+
+//styles
+import '../../styles/css/components/forms/eventosFormulario.css'
 
 const EventosFormulario = () => {
   return (

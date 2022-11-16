@@ -1,8 +1,13 @@
 import React from 'react';
-import OrderCard from '../pure/OrderCard';
-import '../../styles/css/orderContainer.css'
 
-const OrderContainer = () => {
+//components
+import OrderCard from '../pure/OrderCard';
+
+//styles
+import '../../styles/css/components/containers/orderContainer.css'
+
+const OrderContainer = ({orders}) => {
+  //todo implementar renderizado a partir de una lista con las ordenes del usuario
   return (
     <div className="my-orders-container">
       <h1 className="title">Mis Ordenes</h1>

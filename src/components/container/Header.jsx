@@ -1,14 +1,22 @@
+//react, hooks, router
 import React, { useEffect, useState } from 'react';
-import '../../styles/css/header.css'
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+//styles
+import '../../styles/css/components/containers/header.css'
+
+//components
 import Menu from '../pure/Menu';
 import CartContainer from './CartContainer';
 import MenuDesktop from '../pure/MenuDesktop';
+
+//redux
 import { useSelector } from 'react-redux';
 
 const Header = () => {
 
   const navigate = useNavigate();
+
   const logState = useSelector(state => state.logState)
 
   const [menu, setMenu] = useState(false);
@@ -24,7 +32,7 @@ const Header = () => {
   const desplegarMenuDesktop = () => {
     setMenuDesktop(!menuDesktop)
   }
-  const desplegarMenu = () => {
+  const desplegarMenuMobile = () => {
     setMenu(!menu)
   }
   const desplegarCart = () => {
@@ -33,8 +41,8 @@ const Header = () => {
 
   return (
     <nav className='header-container'>
-      <div onClick={desplegarMenu} className='menu'>
-        <img src="https://img.icons8.com/quill/50/000000/experimental-menu-quill.png" alt="icon-menu"/>
+      <div onClick={desplegarMenuMobile} className='menu'>
+        <img alt="icon-menu" src="https://img.icons8.com/quill/50/000000/experimental-menu-quill.png" />
         <Menu className={menu === true ? 'menu-desplegado' : ''} />
       </div>
       <div className="navbar-left navbar">
@@ -45,7 +53,6 @@ const Header = () => {
           <li onClick={()=>navigate('/cotizacion-eventos')}>Eventos</li>
         </ul>
       </div>
-
       <div className="navbar-right navbar">
         <ul>
           <li className="navbar-email" onClick={ logState.logged ? () => desplegarMenuDesktop() : () => navigate('/login')}>
@@ -53,15 +60,13 @@ const Header = () => {
             {
               logState.logged
               ? 
-                <p>tucorreo@host.com</p>
+                <p>tucorreo@example.com</p>
               :
-                <NavLink to={'/login'}>
-                  <p>Iniciar sesion</p>
-                </NavLink>
+                <p onClick={()=>navigate('/login')}>Iniciar sesion</p>
             }
-              {
-                width > 720 && <MenuDesktop className={ menuDesktop ? 'desktop-menu-none' : ''}/> 
-              }
+            {
+              width > 720 && <MenuDesktop className={ menuDesktop ? 'desktop-menu-none' : ''}/> 
+            }
           </li>
           <li className="navbar-shopping-cart">
             {
@@ -69,14 +74,10 @@ const Header = () => {
               ? width > 720  
                 ? <div>
                     <img onClick={desplegarCart} className='cart-header-desktop' alt="shopping cart" src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v1.png" />
-                    <CartContainer className={cart === true ? 'desktop-view cart-desplegado' : 'desktop-view'} closeCart={desplegarCart} />
+                    <CartContainer className={cart ? 'desktop-view cart-desplegado' : 'desktop-view'} closeCart={desplegarCart} />
                   </div>
-                : <NavLink to={'/cart'}>
-                    <img className='cart-header-desktop' src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v1.png" alt="shopping cart" />
-                  </NavLink>
-              : <NavLink to={'/login'}>
-                  <img className='cart-header-desktop' src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v1.png" alt="shopping cart" />
-                </NavLink>
+                : <img className='cart-header-desktop' onClick={()=>navigate('/cart')} src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v1.png" alt="shopping cart" />
+              : <img onClick={()=>navigate('/login')} className='cart-header-desktop' src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v1.png" alt="shopping cart" />
             }
           </li>
         </ul>

@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
 //styles
-import '../../styles/css/loginForm.css';
+import '../../styles/css/components/forms/loginForm.css'
 
 
 const LoginForm = () => {

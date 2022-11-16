@@ -11,7 +11,7 @@ import { setLog } from '../../store/loginState/reducer';
 import { useDispatch } from 'react-redux';
 
 //styles
-import '../../styles/css/registerForm.css'
+import '../../styles/css/components/forms/registerForm.css'
 
 const RegisterForm = () => {
 

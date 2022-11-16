@@ -1,18 +1,24 @@
+//react
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 //components
 import Button from '../pure/Button';
 import CartItem from '../pure/CartItem';
 import CartTotal from '../pure/CartTotal';
+
 //redux
 import { removeItem } from '../../store/cartState/reducer';
 import { useDispatch, useSelector } from 'react-redux';
-// styles
-import '../../styles/css/cartContainer.css'
 
-const CartContainer = ({className = '', closeCart, removeToCart}) => {
+//styles
+import '../../styles/css/components/containers/cartContainer.css'
 
-  const state = useSelector(state => state.cart)
-  const dispatch = useDispatch()
+const CartContainer = ({className = '', closeCart }) => {
+
+  const state = useSelector(state => state.cart);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <div className={`cart-detail ${className}`}>
@@ -25,8 +31,13 @@ const CartContainer = ({className = '', closeCart, removeToCart}) => {
     
           <div className="my-order-content">
             {
-              state.usuarios.map((usuario, index) => {
-                return <CartItem onClick={()=>{console.log(`Eliminando del carrito objeto ${index}`); dispatch(removeItem(index))}} nameArticle={usuario.first_name} price={usuario.price} key={index} imgArticle={usuario.avatar} />
+              state.products.map((product, index) => {
+                return <CartItem 
+                  onClick={()=>dispatch(removeItem(index))}
+                  nameArticle={product.name}
+                  price={product.price}
+                  key={index}
+                  imgArticle={product.imgProduct} />
               })
             }
             <CartTotal />
@@ -34,10 +45,8 @@ const CartContainer = ({className = '', closeCart, removeToCart}) => {
           </div>
         </div>
       </div>
-      <Button buttonText={'Proceder al pago'} typeButton={'primary-button'} onClick={()=>console.log('llendo al checkout')}/>
+      <Button buttonText={'Proceder al pago'} typeButton={'primary-button'} onClick={()=>navigate('/checkout')}/>
     </div>
   );
 }
-
-// export default connect(mapCart,{removeToCart})(CartContainer);
 export default (CartContainer);

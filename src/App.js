@@ -1,4 +1,3 @@
-import './App.css';
 import { Routes, Route } from 'react-router-dom'
 import CartPage from './pages/cart/CartPage'
 import Home from './pages/home/Home'
@@ -13,7 +12,7 @@ import Order from './pages/order/Order'
 import ProductDetail from './pages/product-detail/ProductDetail'
 import RecoveryPassword from './pages/recovery-password/RecoveryPassword'
 import Register from './pages/register/Register'
-
+import CheckOutPage from './pages/checkOutPage/checkOutPage'
 
 function App() {
   return (
@@ -33,6 +32,7 @@ function App() {
           <Route path='/product-detail' element={<ProductDetail />} />
           <Route path='/recovery-password' element={<RecoveryPassword />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/checkout' element={<CheckOutPage />} />
         </Routes>
       </header>
     </div>

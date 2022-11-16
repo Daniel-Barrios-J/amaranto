@@ -2,25 +2,29 @@
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 
-//redux
+//redux (state)
 import { addItem } from '../../store/cartState/reducer';
 import { setDetails } from '../../store/producDetailState/reducer';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
-//componentes
+//components
 import ProductCard from '../pure/ProductCard';
 import ProductDetailContainer from './ProductDetailContainer';
 
-
-//estilos
-import '../../styles/css/productCardsContainer.css'
+//styles
+import '../../styles/css/components/containers/productCardsContainer.css'
 
 
 const ProductCardsContainer = ({productList}) => {
   
-  const [width, setWidth] = useState(0);
+  //estado global
   const details = useSelector(state => state.detailState)
+
+  //estado local
+  const [width, setWidth] = useState(0);
+  
+  //--
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -32,13 +36,17 @@ const ProductCardsContainer = ({productList}) => {
     dispatch(
       setDetails(
         {
-          ...details,
           detailsClick: true,
-          product
+          product: {
+            "name": product.first_name,
+            "description": product.last_name,
+            "price": product.id,
+            "imgProduct": product.avatar,
+            "id": product.id
+          }
         }
       )
     )
-    console.log(details);
     if (width < 720) {
      return navigate('/product-detail')
     }
@@ -50,23 +58,25 @@ const ProductCardsContainer = ({productList}) => {
         {
           width > 720 &&
         <ProductDetailContainer 
-          onClickClose={()=>{dispatch(setDetails({...details, detailsClick: false}));console.log('cerrando detalles')}} 
+          onClickClose={()=>dispatch(setDetails({...details, detailsClick: false}))} 
           classNameDetail={details.detailsClick ? 'product-detail-click' : ''}
-          onClickAdd={()=>console.log(details)}
-          price={details.product.first_name}
-          description={details.product.last_name}
-          image={details.product.avatar}
+          onClickAdd={()=>dispatch(addItem(details.product))}
+          price={details.product.price}
+          name={details.product.name}
+          description={details.product.description}
+          image={details.product.imgProduct}
         />
         }
         {
           productList.map((product, index)=>{
             return <ProductCard
               onClickInfo={()=>itemDetails(product)} 
-              onClickCart={()=>dispatch(addItem(product))}
+              onClickCart={()=>dispatch(addItem({name: product.first_name, description: product.last_name, price: product.id, imgProduct: product.avatar, id: product.id}))}
               name={product.first_name}
-              description={product.first_name}
-              price={product.price} image={product.avatar}
-              key={index}/>
+              description={product.last_name}
+              price={product.id}
+              image={product.avatar}
+              key={product.id}/>
           })
         }
       </div>

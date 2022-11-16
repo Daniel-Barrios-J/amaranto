@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/css/inputField.css'
+import '../../styles/css/components/pure/inputField.css'
 
 const InputField = ({ type, id, placeholder, textLabel }) => {
   return (

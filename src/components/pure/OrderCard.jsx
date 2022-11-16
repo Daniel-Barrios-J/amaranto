@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/css/orderCard.css'
+import '../../styles/css/components/pure/orderCard.css'
 
 const OrderCard = ({date, articles, amount, onClick}) => {
   return (

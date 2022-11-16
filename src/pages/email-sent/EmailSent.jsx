@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/css/emailSent.css'
+import '../../styles/css/pages/emailSent.css'
 
 const EmailSent = () => {
   return (

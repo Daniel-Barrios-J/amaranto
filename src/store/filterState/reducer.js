@@ -6,20 +6,11 @@ const filterSlice = createSlice({
     filter: 'recents'
   },
   reducers: {
-    setRecents: (state, action) => {
-      state.filter = action.payload;
-    },
-    setLowerPrice: (state, action) => {
-      state.filter = action.payload;
-    },
-    setHigherPrice: (state, action) => {
-      state.filter = action.payload;
-    },
-    setPopulars: (state, action) => {
+    setFilterState: (state, action) => {
       state.filter = action.payload;
     },
   }
 })
 
-export const {setHigherPrice, setLowerPrice, setPopulars, setRecents} = filterSlice.actions;
+export const {setFilterState} = filterSlice.actions;
 export default filterSlice.reducer;

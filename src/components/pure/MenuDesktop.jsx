@@ -1,8 +1,13 @@
+//react, router
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/css/menuDesktop.css'
+
+//redux
 import { useDispatch } from 'react-redux';
 import { setLog } from '../../store/loginState/reducer';
+
+//styles
+import '../../styles/css/components/pure/menuDesktop.css'
 
 const MenuDesktop = ({className}) => {
 

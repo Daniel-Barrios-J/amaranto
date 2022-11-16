@@ -1,6 +1,7 @@
 import React from 'react';
-import '../../styles/css/cartTotal.css'
+import '../../styles/css/components/pure/cartTotal.css'
 
+//redux
 import { useSelector } from 'react-redux';
 
 const CartTotal = () => {
@@ -8,7 +9,7 @@ const CartTotal = () => {
   const cartState = useSelector( state => state.cart);
 
   const totalCart = () => {
-    let priceArray = cartState.usuarios.map((product)=>product.price)
+    let priceArray = cartState.products.map((product)=>product.price)
     if (priceArray.length === 0) {
       return '0'
      }

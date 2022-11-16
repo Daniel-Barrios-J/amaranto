@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+
+//components
 import Button from '../../components/pure/Button';
 import InputField from '../../components/pure/InputField';
-import '../../styles/css/myAccountForm.css'
+
+//styles
+import '../../styles/css/components/forms/myAccountForm.css'
 
 const MyAccountForm = () => {
   
@@ -14,7 +18,7 @@ const MyAccountForm = () => {
         <h1 className="title">My account</h1>
         <div action="#" className="form">
           <div>
-            <label for="name" className="label">Name</label>
+            <label htmlFor="name" className="label">Name</label>
             <p className="value">Pedrito Sola</p>
             {
               edit
@@ -27,7 +31,7 @@ const MyAccountForm = () => {
             }
             {
               edit
-              ? <InputField id={'email'} placeholder={'ejemplo@correo.com...'} textLabel={'Contraseña anterior'} type={'email'} />
+              ? <InputField id={'prev-password'} placeholder={'***********'} textLabel={'Contraseña anterior'} type={'password'} />
               : 
                 <>
                   <label className="label">Password</label>

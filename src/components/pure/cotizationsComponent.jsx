@@ -1,19 +1,21 @@
+//react, router
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import Button from '../pure/Button'
-// import '../../styles/css/buttons.css'
-import '../../styles/css/cotizationComponent.css'
+import { useNavigate } from 'react-router-dom';
 
+//components
+import Button from '../pure/Button'
+
+//styles
+import '../../styles/css/components/containers/cotizationComponent.css'
 
 const CotizationsComponent = () => {
+
+  const navigate = useNavigate()
+
   return (
     <div className='cotizations-container button-container'>
-      <NavLink to={'/cotizacion-eventos'}>
-        <Button buttonText={'Eventos 🍾'} typeButton={'secondary-button'}>Cotiza tu evento</Button>
-      </NavLink>
-      <NavLink to={'/cotizacion-arreglos'}>
-        <Button buttonText={'Personalizar arreglo'} typeButton={'secondary-button'}>Cotiza tu evento</Button>
-      </NavLink>
+      <Button buttonText={'Eventos 🍾'} typeButton={'secondary-button'} onClick={()=>navigate('/cotizacion-eventos')}>Cotiza tu evento</Button>
+      <Button buttonText={'Personalizar arreglo'} typeButton={'secondary-button'} onClick={()=>navigate('/cotizacion-arreglos')}>Cotiza tu evento</Button>
     </div>
   );
 }

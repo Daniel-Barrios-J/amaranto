@@ -1,7 +1,6 @@
 .product-cards-container {
-  // display: flex;
-  // flex-direction: column;
-  height: 75vh;
+  height: auto;
+  padding-bottom: 20px;
   .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, 180px);

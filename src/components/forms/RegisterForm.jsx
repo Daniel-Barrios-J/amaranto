@@ -46,7 +46,7 @@ const RegisterForm = () => {
             {/* <Button buttonText={'Iniciar sesión'} typeButton={'primary-button'} onClick={()=>logInState()}  /> */}
             <Button buttonText={'Registrarme'} typeButton={'primary-button'} onClick={()=>{console.log('iniciando sesion...'); dispatch(setLog({logged: true, textLog: 'Conectado'})); navigate('/')}}  />
           </div>
-          <Button buttonText={'Ya tienes cuenta? inicia sesion aqui'} typeButton={'third-button'} onClick={()=>navigate('/login')} />
+          <Button buttonText={'¿Ya tienes cuenta? inicia sesion aqui'} typeButton={'third-button'} onClick={()=>navigate('/login')} />
           
         </div>
       </div>

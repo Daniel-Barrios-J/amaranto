@@ -1,0 +1,16 @@
+.title-form-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+}
+.title-form-container .logo-form {
+  width: 40%;
+  align-self: center;
+}
+.title-form-container .title-container {
+  padding: 0 10px;
+}
+
+/*# sourceMappingURL=titleForm.css.map */

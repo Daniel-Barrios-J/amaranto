@@ -8,24 +8,6 @@
   justify-content: center;
   gap: 6px;
 }
-.arreglos-formulario-container .logo-form {
-  width: 40%;
-  align-self: center;
-}
-.arreglos-formulario-container .title-container {
-  text-align: center;
-  display: grid;
-  place-items: center;
-  margin-bottom: 8px;
-}
-.arreglos-formulario-container .title-container h2 {
-  margin: 0;
-}
-.arreglos-formulario-container .title-container p {
-  font-size: 12px;
-  color: #C7C7C7;
-  width: 60%;
-}
 
 @media screen and (max-width: 680px) {
   .logo-form {

@@ -28,24 +28,36 @@ const CartContainer = ({className = '', closeCart }) => {
             <img className="close-arrow-cart" src="https://img.icons8.com/android/24/000000/up-left-arrow.png" alt="arrow" />
             <p className="title">Shopping cart</p>
           </div>
-    
-          <div className="my-order-content">
-            {
-              state.products.map((product, index) => {
-                return <CartItem 
-                  onClick={()=>dispatch(removeItem(index))}
-                  nameArticle={product.name}
-                  price={product.price}
-                  key={index}
-                  imgArticle={product.imgProduct} />
-              })
-            }
-            <CartTotal />
 
-          </div>
+          {
+            !state.products.length
+            ? 
+              <div className='empty-cart'>
+                <h3>Aun no tienes articulos...</h3>
+                <img alt='' src="https://img.icons8.com/officel/80/null/buy.png"/>
+                <p>Vamos a agregar algunos 😀</p>
+              </div>
+            :
+              <div className="my-order-content">
+                {
+                  state.products.map((product, index) => {
+                    return <CartItem 
+                      onClick={()=>dispatch(removeItem(index))}
+                      nameArticle={product.name}
+                      price={product.price}
+                      key={index}
+                      imgArticle={product.imgProduct} />
+                  })
+                }
+                <CartTotal />
+              </div>
+          }
         </div>
       </div>
-      <Button buttonText={'Proceder al pago'} typeButton={'primary-button'} onClick={()=>navigate('/checkout')}/>
+      <Button
+        buttonText={!state.products.length ? 'Ir a la tienda' : 'Proceder al pago'} 
+        typeButton={'primary-button'} 
+        onClick={!state.products.length ? ()=>navigate('/') : ()=>navigate('/checkout')}/>
     </div>
   );
 }

@@ -1,0 +1,14 @@
+.title-form-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  .logo-form {
+    width: 40%;
+    align-self: center;
+  }
+  .title-container {
+    padding: 0 10px;
+  }
+}

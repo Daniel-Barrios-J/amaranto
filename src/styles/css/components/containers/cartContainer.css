@@ -23,6 +23,17 @@
   font-size: var(--lg);
   font-weight: bold;
 }
+.cart-detail .my-order .my-order-container .empty-cart {
+  display: grid;
+  place-items: center;
+  gap: 12px;
+}
+.cart-detail .my-order .my-order-container .empty-cart img {
+  width: 56px;
+}
+.cart-detail .my-order .my-order-container .empty-cart p {
+  color: var(--very-light-pink);
+}
 .cart-detail .my-order .my-order-container .my-order-content {
   display: flex;
   flex-direction: column;

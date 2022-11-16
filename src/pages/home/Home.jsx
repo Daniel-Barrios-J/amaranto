@@ -14,9 +14,6 @@ import { getListUsers } from '../../services';
 import { useDispatch, useSelector } from 'react-redux';
 import { setDataHome } from '../../store/homeState/reducer';
 
-// Styles
-import '../../styles/css/pages/home.css'
-
 //--
 const Home = () => {
 

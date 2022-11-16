@@ -1,23 +1,50 @@
+//react, router
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+//components
+import Header from '../../components/container/Header';
+import Button from '../../components/pure/Button';
+import TitleForm from '../../components/pure/TitleForm';
+
+//styles
 import '../../styles/css/pages/emailSent.css'
 
 const EmailSent = () => {
+
+  const navigate = useNavigate();
+
   return (
-    <div className="email">
-      <div className="email-container">
-        <img src="../logos/logo_yard_sale.svg" alt="logo"  className="logo" />
-        <h1 className="title">Email has been sent!</h1>
-        <p className="subtitle">Please check your inbox for instructions on how to reset the password</p>
-        <div className="email-icon">
-          <img src="../icons/email.svg" alt="email" />
+    <>
+      <Header />
+      <div className="email-page">
+        <div className="email-container">
+          <TitleForm 
+            title={'¡Hemos envíado un correo!'}
+            description={'Porfavor verifica tu bandeja de entrada para seguir las intrucciones de reestablecimiento de tu contraseña'}
+
+
+          />
+          <div className="email-icon">
+            <img src="https://img.icons8.com/color/96/null/secured-letter--v1.png" alt="email" />
+          </div>
+          {/* <button className="primary-button login-button">Login</button> */}
+          <Button 
+            buttonText={'Iniciar sesión'}
+            typeButton={'primary-button'}
+            onClick={()=>navigate('/login')}
+          />
+          <div className="resend">
+            <span>¿No has recibido ningun correo? </span>
+            <Button 
+              buttonText={'Reenviar'}
+              typeButton={'third-button'}
+              onClick={()=>console.log('Reenviando correo de reestablecimiento...')}
+            />
+          </div>
         </div>
-        <button className="primary-button login-button">Login</button>
-        <p className="resend">
-          <span>Didn't receive de email?</span>
-          <a href="/">Resend</a>
-        </p>
       </div>
-    </div>
+    </>
   );
 }
 

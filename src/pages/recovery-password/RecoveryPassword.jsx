@@ -1,13 +1,12 @@
 import React from 'react';
 import Header from '../../components/container/Header';
+import RecoveryPasswordForm from '../../components/forms/RecoveryPasswordForm';
 
 const RecoveryPassword = () => {
   return (
     <div>
-    <Header />
-      <h1>
-        RecoveryPassword
-      </h1>
+      <Header />
+      <RecoveryPasswordForm />
     </div>
   );
 }

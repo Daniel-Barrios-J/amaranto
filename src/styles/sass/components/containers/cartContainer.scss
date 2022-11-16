@@ -24,6 +24,17 @@
           font-weight: bold;
         }
       }
+      .empty-cart {
+        display: grid;
+        place-items: center;
+        gap: 12px;
+        img {
+          width: 56px;
+        }
+        p {
+          color: var(--very-light-pink);
+        }
+      }
       .my-order-content {
         display: flex;
         flex-direction: column;

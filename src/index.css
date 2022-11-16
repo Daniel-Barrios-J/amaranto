@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300&display=swap');
 :root {
   --very-light-pink: #C7C7C7;
   --white: #FFFFFF;
@@ -9,13 +10,14 @@
   --md: 16px;
   --lg: 18px;
 }
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Albert Sans', sans-serif;
   user-select: none;
 }
 input {

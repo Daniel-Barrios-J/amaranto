@@ -5,6 +5,7 @@ $textInputField: #F7F7F7;
 .input-field-container {
   display: flex;
   flex-direction: column;
+  width: 300px;
   .label {
     font-size: $sm;
     font-weight: bold;
@@ -17,7 +18,9 @@ $textInputField: #F7F7F7;
     height: 32px;
     font-size: $md;
     padding: 6px;
+    padding-left: 20px;
     margin-bottom: 12px;
+    outline: none;
   }
   .text-area {
     height: 80px;

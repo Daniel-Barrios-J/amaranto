@@ -57,7 +57,8 @@ const CartContainer = ({className = '', closeCart }) => {
       <Button
         buttonText={!state.products.length ? 'Ir a la tienda' : 'Proceder al pago'} 
         typeButton={'primary-button'} 
-        onClick={!state.products.length ? ()=>navigate('/') : ()=>navigate('/checkout')}/>
+        onClick={!state.products.length ? ()=>navigate('/') : ()=>navigate('/checkout')}
+      />
     </div>
   );
 }

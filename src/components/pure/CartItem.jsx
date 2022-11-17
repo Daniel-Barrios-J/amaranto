@@ -1,8 +1,15 @@
+//react, hooks, router
 import React, { useState } from 'react';
+
+//styles
 import '../../styles/css/components/pure/cartItem.css'
+
+//redux
+// import { useSelector } from 'react-redux';
 
 const CartItem = ({ imgArticle, nameArticle, price, onClick }) => {
 
+  // const cartState = useSelector(state => state.cart)
   const [remove, setRemove] = useState(false);
   const handleRemove = () => {
     setRemove(true)
@@ -11,22 +18,41 @@ const CartItem = ({ imgArticle, nameArticle, price, onClick }) => {
       setRemove(false)
     }, 800)
   }
+
+  // const productosRepetidos = ()=>{
+  //   const productCartList = {}
+  //   cartState.products.map(product => 
+  //     productCartList[product.name] 
+  //     ? productCartList[product.name] = {
+  //       product: productCartList[product.name], 
+  //       quantity: + 1
+  //     } 
+  //     : productCartList[product.name] = {
+  //       product: productCartList[product.name], 
+  //       quantity: 1
+  //     }
+  //   )
+  //   return productCartList;
+  // }
+  // console.log(productosRepetidos());
+
+  // const checkQuantity = (name) => {
+  //   const quantity = productosRepetidos().map(producto => producto.name)
+  // }
   return (
     <div className="shopping-cart">
-      {/* <div className={remove ? 'remove-product' : 'remove-product'}>
-        <p>Eliminando del carrito...</p>
-      </div> */}
       <div className={remove ? 'remove-product' : 'remove-product not-remove'}>
         <p>Eliminando del carrito...</p>
       </div>
       <figure>
-        <img src={imgArticle} alt="lamp" />
+        <img src={imgArticle} alt="article" />
       </figure>
-      <p>{nameArticle}</p>
-      <p>{`$${price}.00`}</p>
+      <p className='name-article'>{nameArticle}</p>
+      {/* <p className='quantity'>x2</p> */}
+      <p className='price-article'>{`$${price}.00`}</p>
       <img 
         className='icon-remove-cart' 
-        alt=""
+        alt="delete-icon"
         // onClick={onClick} 
         onClick={()=>handleRemove()} 
         src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png" 

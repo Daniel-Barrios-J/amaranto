@@ -1,4 +1,5 @@
 import React from 'react';
+import CheckOutContainer from '../../components/container/CheckOutContainer';
 
 //compoments
 import Header from '../../components/container/Header'
@@ -7,9 +8,7 @@ const CheckOutPage = () => {
   return (
     <div>
       <Header />
-      <h1>
-        Check Out Page!
-      </h1>
+      <CheckOutContainer />
     </div>
   );
 }

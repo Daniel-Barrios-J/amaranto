@@ -1,0 +1,28 @@
+.order-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 12px;
+  align-items: center;
+  max-width: 320px;
+  margin: 12px auto;
+  height: 80px;
+}
+.order-item figure {
+  margin: 0;
+}
+.order-item figure img {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  object-fit: cover;
+  background-color: antiquewhite;
+}
+.order-item p:nth-child(2) {
+  color: var(--very-light-pink);
+}
+.order-item p:nth-child(3) {
+  font-size: var(--md);
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=orderItem.css.map */

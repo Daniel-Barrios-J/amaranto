@@ -1,0 +1,25 @@
+.my-orders-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+}
+.my-orders-container .title-container {
+  height: 10%;
+  display: grid;
+  place-content: center;
+}
+.my-orders-container .title-container .title {
+  font-size: var(--lg);
+}
+.my-orders-container .my-order-content {
+  height: 90%;
+}
+.my-orders-container .my-order-content .empty-orders {
+  display: grid;
+  place-items: center;
+  width: 300px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=ordersContainer.css.map */

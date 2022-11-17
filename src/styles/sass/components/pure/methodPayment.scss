@@ -1,0 +1,16 @@
+.method-payment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F7F7F7;
+  width: 240px;
+  height: 60px;
+  border-radius: 16px;
+  margin: 12px 0;
+  box-shadow: 0 0 4px rgba($color: #000000, $alpha: 0.3);
+  img {
+    width: 80px;
+    // height: 40px;
+    margin-left: 10px;
+  }
+}

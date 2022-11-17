@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../../components/container/Header';
-import OrderContainer from '../../components/container/OrderContainer';
+import OrdersContainer from '../../components/container/OrdersContainer';
 
 const MyOrders = () => {
   return (
     <>
       <Header></Header>
-      <OrderContainer />
+      <OrdersContainer />
     </>
   );
 }

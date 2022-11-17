@@ -1,6 +1,6 @@
 .shopping-cart {
   display: grid;
-  grid-template-columns: auto 1fr auto auto;
+  grid-template-columns: auto 0.9fr auto auto auto;
   gap: 12px;
   margin-bottom: 16px;
   align-items: center;
@@ -33,12 +33,14 @@
   border-radius: 20px;
   object-fit: cover;
 }
-.shopping-cart p:nth-child(2) {
-  color: var(--very-light-pink);
-}
-.shopping-cart p:nth-child(3) {
+.shopping-cart .name-article {
   font-size: var(--md);
   font-weight: bold;
+}
+.shopping-cart .quantity {
+  color: rgba(0, 0, 0, 0.5);
+  margin-right: 6px;
+  font-size: var(--sm);
 }
 .shopping-cart .icon-remove-cart {
   height: 16px;

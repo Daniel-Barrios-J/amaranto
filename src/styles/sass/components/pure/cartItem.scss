@@ -1,6 +1,6 @@
 .shopping-cart {
   display: grid;
-  grid-template-columns: auto 1fr auto auto;
+  grid-template-columns: auto 0.9fr auto auto auto;
   gap: 12px;
   margin-bottom: 16px;
   align-items: center;
@@ -33,14 +33,17 @@
     }
 
   }
-  & p:nth-child(2) {
-    color: var(--very-light-pink);
-  }
-  & p:nth-child(3) {
+  
+  .name-article {
     font-size: var(--md);
     font-weight: bold;
   }
-  & .icon-remove-cart {
+  .quantity {
+    color: rgba($color: #000000, $alpha: 0.5);
+    margin-right: 6px;
+    font-size: var(--sm);
+  }
+  .icon-remove-cart {
     height: 16px;
     margin-left: 12px;
     opacity: 0.4;

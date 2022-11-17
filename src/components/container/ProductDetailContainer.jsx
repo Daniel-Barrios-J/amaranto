@@ -1,14 +1,20 @@
-//react, hooks
+//react, hooks, router
 import React, {useEffect, useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //components
 import Button from '../../components/pure/Button';
+
+//redux
+import { useSelector } from 'react-redux';
 
 //styles
 import '../../styles/css/components/containers/productDetailContainer.css'
 
 const ProductDetailContainer = ({name, description, price, image, classNameDetail, onClickClose, onClickAdd}) => {
 
+  const logged = useSelector(state => state.logState.logged);
+  const navigate = useNavigate();
 
   const [width, setWidth] = useState(0);
   useEffect(() => {
@@ -20,9 +26,13 @@ const ProductDetailContainer = ({name, description, price, image, classNameDetai
   const desktopView = width > 720 ? 'product-detail-desktop' : '' 
 
   const handleAdd = ()=>{
-    onClickAdd();
-    setAdded(true);
-    setTimeout(()=>setAdded(false),1000);
+    if(logged) {
+      onClickAdd();
+      setAdded(true);
+      setTimeout(()=>setAdded(false),1000);
+    } else {
+      navigate('/login')
+    }
   }
 
   return (

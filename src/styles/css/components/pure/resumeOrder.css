@@ -7,8 +7,6 @@
   padding: 0 24px;
   height: 64px;
   width: 300px;
-  margin: 20px auto;
-  box-sizing: border-box;
 }
 .resume-order p:nth-child(1) {
   display: flex;

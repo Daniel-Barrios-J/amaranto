@@ -6,6 +6,15 @@ $sm: 14px;
   .button {
     height: 50px;
     width: 300px;
+    transition: all 150ms;
+    &:hover {
+      // transform: translateY(-1px);
+      box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.2);
+    }
+    &:active {
+    transform: translateY(1px);
+    box-shadow: none;
+    }
   }
   .primary-button {
     background-color: $hospitalGreen;

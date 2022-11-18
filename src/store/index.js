@@ -17,6 +17,7 @@ import detailState from './producDetailState/reducer'
 import filterState from './filterState/reducer'
 import homeState from './homeState/reducer'
 import ordersState from './ordersState/reducer'
+import orderState from './orderState/reducer'
 
 const store = configureStore({
   reducer: {
@@ -25,7 +26,8 @@ const store = configureStore({
     detailState,
     filterState,
     homeState,
-    ordersState
+    ordersState,
+    orderState
   },
 })
 

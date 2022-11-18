@@ -16,6 +16,7 @@ const OrdersContainer = () => {
   //todo implementar renderizado a partir de una lista con las ordenes del usuario
   const orders = useSelector(state => state.ordersState.orders)
   const navigate = useNavigate();
+  console.log(orders.valueOf())
 
   return (
     <div className="my-orders-container">
@@ -24,7 +25,7 @@ const OrdersContainer = () => {
       </div>
       <div className="my-order-content">
         {
-          orders[0].totalPurchase === '00'
+          !orders.length
           ? 
             <div className='empty-orders'>
               <h3>Aun no haz realizado compras...</h3>
@@ -37,12 +38,13 @@ const OrdersContainer = () => {
               />
             </div>
           : 
-            orders.map((order,index) => {
+            orders.map((order) => {
               return <OrderCard 
+                key={order.orderId}
                 onClick={()=>navigate('/order')} 
-                date={orders[index].date} 
-                articles={`${orders[index].products.length} articulos`} 
-                amount={orders[index].totalPurchase} 
+                date={order.date} 
+                articles={`${order.products.length} articulos`} 
+                amount={order.totalPurchase} 
               />
           })
         }

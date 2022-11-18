@@ -4,6 +4,14 @@
 .button-container .button {
   height: 50px;
   width: 300px;
+  transition: all 150ms;
+}
+.button-container .button:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.button-container .button:active {
+  transform: translateY(1px);
+  box-shadow: none;
 }
 .button-container .primary-button {
   background-color: #ACD9B2;

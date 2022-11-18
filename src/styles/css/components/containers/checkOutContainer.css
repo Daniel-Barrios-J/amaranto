@@ -1,10 +1,41 @@
 .check-out-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  height: 85vh;
+}
+.check-out-container .purchase-screen {
+  width: 90vw;
+  height: 90vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transition: all 100ms;
+  z-index: 1;
+  position: absolute;
   display: grid;
   place-items: center;
-  height: 85vh;
+}
+.check-out-container .purchase-screen p {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bolder;
+  font-size: 32px;
+}
+.check-out-container .processing {
+  opacity: 1;
+}
+.check-out-container h2 {
+  margin: 0 0 16px 0;
+}
+.check-out-container .method-payment-container {
+  margin: 16px 0;
+  display: grid;
+  gap: 16px;
 }
 .check-out-container .text {
   margin: 0;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 /*# sourceMappingURL=checkOutContainer.css.map */

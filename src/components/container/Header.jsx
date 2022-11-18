@@ -42,7 +42,8 @@ const Header = () => {
   return (
     <nav className='header-container'>
       <div onClick={desplegarMenuMobile} className='menu'>
-        <img alt="icon-menu" src="https://img.icons8.com/quill/50/000000/experimental-menu-quill.png" />
+        <img alt="icon-menu" src="https://img.icons8.com/plasticine/100/null/menu.png" />
+        {/* <img alt="icon-menu" src="https://img.icons8.com/bubbles/50/null/menu.png" /> */}
         <Menu className={menu === true ? 'menu-desplegado' : ''} />
       </div>
       <div className="navbar-left navbar">
@@ -73,11 +74,11 @@ const Header = () => {
               logState.logged
               ? width > 720  
                 ? <div>
-                    <img onClick={desplegarCart} className='cart-header-desktop' alt="shopping cart" src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v1.png" />
+                    <img onClick={desplegarCart} className='cart-header' alt="shopping cart" src="https://img.icons8.com/office/40/null/shopping-cart-loaded--v1.png" />
                     <CartContainer className={cart ? 'desktop-view cart-desplegado' : 'desktop-view'} closeCart={desplegarCart} />
                   </div>
-                : <img className='cart-header-desktop' onClick={()=>navigate('/cart')} src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v1.png" alt="shopping cart" />
-              : <img onClick={()=>navigate('/login')} className='cart-header-desktop' src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v1.png" alt="shopping cart" />
+                : <img className='cart-header' onClick={()=>navigate('/cart')} src="https://img.icons8.com/office/40/null/shopping-cart-loaded--v1.png" alt="shopping cart" />
+              : <img onClick={()=>navigate('/login')} className='cart-header' src="https://img.icons8.com/office/40/null/shopping-cart-loaded--v1.png" alt="shopping cart" />
             }
           </li>
         </ul>

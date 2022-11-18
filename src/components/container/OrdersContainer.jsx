@@ -8,16 +8,23 @@ import Button from '../pure/Button';
 
 //redux
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setOrderPage } from '../../store/orderState/reducer';
 
 //styles
 import '../../styles/css/components/containers/ordersContainer.css'
 
 const OrdersContainer = () => {
-  //todo implementar renderizado a partir de una lista con las ordenes del usuario
+
   const orders = useSelector(state => state.ordersState.orders)
   const navigate = useNavigate();
-  console.log(orders.valueOf())
+  const dispatch = useDispatch();
 
+  const handleOnClickOrder = (order) => {
+    dispatch(setOrderPage(order))
+    navigate('/order');
+  }
+  
   return (
     <div className="my-orders-container">
       <div className='title-container'>
@@ -41,7 +48,7 @@ const OrdersContainer = () => {
             orders.map((order) => {
               return <OrderCard 
                 key={order.orderId}
-                onClick={()=>navigate('/order')} 
+                onClick={()=>handleOnClickOrder(order)} 
                 date={order.date} 
                 articles={`${order.products.length} articulos`} 
                 amount={order.totalPurchase} 

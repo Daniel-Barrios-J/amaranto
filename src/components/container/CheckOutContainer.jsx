@@ -39,7 +39,7 @@ const CheckOutContainer = () => {
       setTimeout(()=>{
         setPurchase(initialPurchase);
         dispatch(resetCart());
-        navigate('/order')
+        navigate('/my-orders')
       },3000)
     }, 100)
   }

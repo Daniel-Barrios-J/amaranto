@@ -23,7 +23,7 @@ const ordersSlice = createSlice({
   reducers: {
     setOrders: (state, action) => {
       // state.orders = action.payload
-      state.orders.push({
+      state.orders.unshift({
         orderId: uuidv4(),
         date: dateOfPurchase(),
         products: action.payload,

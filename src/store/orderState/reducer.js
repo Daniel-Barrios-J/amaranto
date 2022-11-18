@@ -5,19 +5,17 @@ import { createSlice } from "@reduxjs/toolkit";
 const orderSlice = createSlice({
   name: 'orderState',
   initialState: {
-    seeOrderClick: false,
-    product: {
-      "name": "ejemplo",
-      "id": "ejemplo",
-      "description": "ejemplo",
-      "price": "ejemplo",
-      "imgProduct": "https://reqres.in/img/faces/1-image.jpg"
+    order: {
+      orderId: 'id ejemplo',
+      date: 'example date',
+      products: [],
+      totalPurchase: 'total example'
     }
+     
   },
   reducers: {
     setOrderPage: (state, action) => {
-      state.detailsClick = action.payload.detailsClick;
-      state.product = action.payload.product;
+      state.order = action.payload;
     }
   }
 })

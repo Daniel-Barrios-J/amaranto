@@ -1,5 +1,3 @@
-import React from 'react';
-
 //components
 import InputField from '../pure/InputField';
 import Button from '../pure/Button';
@@ -9,17 +7,15 @@ import TitleForm from '../pure/TitleForm';
 import '../../styles/css/components/forms/arreglosFormulario.css'
 
 //services
-// import { setUsuario, crearUsuario, readDocument, listenToADocument } from '../../firebase';
+// import {  addProduct } from '../../firebase';
 
 const ArreglosFormulario = () => {
 
-  const handlePruebas = ()=> {
-    console.log('pruebas de base de datos...');
-    // setUsuario();
-    // crearUsuario();
-    // readDocument();
+  const handlePruebas = async ()=> {
+    console.log('subiendo producto...');
+    // await addProduct();
   }
-  
+
   // listenToADocument();
 
   return (

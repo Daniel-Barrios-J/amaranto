@@ -1,4 +1,5 @@
 .product-card {
+  user-select: none;
   width: 90%;
   cursor: pointer;
   // padding: 12px;
@@ -49,6 +50,7 @@
     } 
     .cart-logo-info {
       cursor: pointer;
+      user-select: none;
       background-color: #ACD9B2;
       border: solid 1px #ACD9B2;
       border-radius: 50%;

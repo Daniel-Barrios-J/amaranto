@@ -38,11 +38,11 @@ const ProductCardsContainer = ({productList}) => {
         {
           detailsClick: true,
           product: {
-            "name": product.first_name,
-            "description": product.last_name,
-            "price": product.id,
-            "imgProduct": product.avatar,
-            "id": product.id
+            "name": product.name,
+            "description": product.description,
+            "price": product.price,
+            "imgProduct": product.images.img1,
+            "id": product.productId
           }
         }
       )
@@ -68,14 +68,17 @@ const ProductCardsContainer = ({productList}) => {
         />
         }
         {
+          productList.length === 0
+          ? 'cargando productos'
+          :
           productList.map((product, index)=>{
             return <ProductCard
               onClickInfo={()=>itemDetails(product)} 
-              onClickCart={()=>dispatch(addItem({name: product.first_name, description: product.last_name, price: product.id, imgProduct: product.avatar, id: product.id}))}
-              name={product.first_name}
-              description={product.last_name}
-              price={product.id}
-              image={product.avatar}
+              onClickCart={()=>dispatch(addItem({name: product.name, description: product.description, price: product.price, imgProduct: product.images.img1, id: product.productId}))}
+              name={product.name}
+              // description={product.description}
+              price={product.price}
+              image={product.images.img1}
               key={product.id}/>
           })
         }

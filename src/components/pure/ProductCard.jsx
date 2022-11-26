@@ -30,20 +30,20 @@ const ProductCard = ({name, description, price, image, onClickCart, onClickInfo}
   
   return (
     <div className="product-card">
-    <div className='product-img' onClick={onClickInfo}>
-      <img 
-        src={image}  
-        alt="" 
-        className="product-img"
-      />
-      <div className={added ? 'added-product' : 'added-product not-added'}>
-        <p>Producto<br/>agregado</p>
+      <div className='product-img' onClick={onClickInfo}>
+        <img 
+          src={image}  
+          alt="" 
+          className="product-img"
+        />
+        <div className={added ? 'added-product' : 'added-product not-added'}>
+          <p>Producto<br/>agregado</p>
+        </div>
       </div>
-    </div>
       <div className="product-info">
         <div className='data-info' onClick={onClickInfo}>
           <p>{`$${price}.00`}</p>
-          <p>{`${name} ${description}`}</p>
+          <p>{name}</p>
         </div>
         {/* todo clase condicional segun se agrega al carrito */}
         <div 

@@ -1,11 +1,13 @@
+//third libraries
+import { v4 as uuidv4 } from 'uuid';
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
+
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-import { addDoc, collection, doc, getDoc, getFirestore, onSnapshot, setDoc, updateDoc } from "firebase/firestore";
-
+import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -26,58 +28,28 @@ export const analytics = getAnalytics(app);
 // Initialize Cloud Firestore and get a reference to the service
 export const db = getFirestore(app);
 
-export const usuario = doc(db, 'usuarios/usuario4');
+// trayendo productos --------------------------------------------------
 
-//escribiendo en un documento
-export const setUsuario = async()=>{
-  const docData = {
-    nombre: 'daniyo',
-    apellido: 'sola'
-  }
-  try {
-    await setDoc(usuario, docData)
-    console.log('Usuario registrado exitosamente...');
-  } catch (error) {
-    console.log('Ha habido un error al registrar el usuario... el error es el siguiente: ' + error);
-  }
+export const getProducts = async() =>{
+  const products = []
+  const productsData = await getDocs(collection(db, 'productos'));
+  productsData.forEach(doc => products.push(doc.data()))
+  return products
 }
 
-// creando un documento nuevo addDoc()
-// el documento se crea con un identificador aleatorio
-const usuarios = collection(db, 'usuarios')
 
-export const crearUsuario = async() => {
-  const newUserInfo = {
-    nombre: 'pablo',
-    apellido: 'marmol'
-  }
-  try {
-    await addDoc(usuarios, newUserInfo)
-    console.log(`usuario creado en ${newUserInfo.path}`);
-  } catch (error) {
-    console.log(`Ha ocurriodo un error: ${error}`);
-  }
-}
+//Agregar porducto ----------------
 
-// leyendo documentos 
-
-export const readDocument = async () => {
-  const consulta = await getDoc(usuario);
-  if (consulta.exists()) {
-    const datos = consulta.data();
-    console.log(`la info del usuario es ${JSON.stringify(datos)}`);
-  }
-}
-
-// leyendo cambios en tiempo real 
-
-export const listenToADocument = () => {
-  onSnapshot(usuario, consulta => {
-    if (consulta.exists()) {
-      const datos = consulta.data();
-      console.log(`la info en tiempo real del usuario es ${JSON.stringify(datos)}`);
-    }
+const productsCollection = collection(db, 'productos');
+export const addProduct = async (name = 'Ramo 12 rosas', description = 'Ramo de 12 rosas, con decorado y envoltura de papel celofan con tela, acompañado con moño y nota dedicatoria', price = 370, img='https://st.depositphotos.com/1038919/3939/i/950/depositphotos_39390605-stock-photo-bouquet-of-blossoming-dark-red.jpg') => {
+  const newProduct = await addDoc(productsCollection, {
+    name,
+    description,
+    price,
+    images: {
+      img1: img,
+    },
+    id: uuidv4(),
   })
+  console.log(`el producto ${newProduct} ha sido creado exitosamente...`);
 }
-
-// leyendo varios documentos 

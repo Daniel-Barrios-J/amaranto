@@ -8,7 +8,10 @@ import CustomContainer from '../../components/container/CustomContainer';
 import ProductCardsContainer from '../../components/container/ProductCardsContainer';
 
 //services
-import { getListUsers } from '../../services';
+// import { getListUsers } from '../../services';
+
+//firebase
+import { getProducts } from '../../firebase';
 
 // redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,9 +23,16 @@ const Home = () => {
   const dataHome = useSelector(state => state.homeState.dataHome)
   const dispatch = useDispatch()
 
+  // useEffect(() => {
+  //   getProducts();
+  // // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
+
   useEffect(() => {
-    getListUsers().then(data => dispatch(setDataHome(data)));
     console.log('trayendo productos');
+    // getProducts().then(res => console.log(res));
+    getProducts().then(res => dispatch(setDataHome(res)));
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -31,7 +41,8 @@ const Home = () => {
       <Header />
       <CustomContainer />
       <FilterBy />
-      <ProductCardsContainer productList={dataHome.data} />
+      <ProductCardsContainer productList={dataHome} />
+      {/* <ProductCardsContainer productList={dataHome.data} /> */}
     </>
   );
 }

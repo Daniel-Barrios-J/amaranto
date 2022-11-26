@@ -18,27 +18,7 @@ const CartItem = ({ imgArticle, nameArticle, price, onClick }) => {
       setRemove(false)
     }, 800)
   }
-
-  // const productosRepetidos = ()=>{
-  //   const productCartList = {}
-  //   cartState.products.map(product => 
-  //     productCartList[product.name] 
-  //     ? productCartList[product.name] = {
-  //       product: productCartList[product.name], 
-  //       quantity: + 1
-  //     } 
-  //     : productCartList[product.name] = {
-  //       product: productCartList[product.name], 
-  //       quantity: 1
-  //     }
-  //   )
-  //   return productCartList;
-  // }
-  // console.log(productosRepetidos());
-
-  // const checkQuantity = (name) => {
-  //   const quantity = productosRepetidos().map(producto => producto.name)
-  // }
+  
   return (
     <div className="shopping-cart">
       <div className={remove ? 'remove-product' : 'remove-product not-remove'}>

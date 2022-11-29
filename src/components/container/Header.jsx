@@ -18,6 +18,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const logState = useSelector(state => state.logState)
+  const user = useSelector(state => state.userState.user)
 
   const [menu, setMenu] = useState(false);
   const [cart, setCart] = useState(false);
@@ -61,7 +62,7 @@ const Header = () => {
             {
               logState.logged
               ? 
-                <p>tucorreo@example.com</p>
+                <p>{user.email}</p>
               :
                 <p onClick={()=>navigate('/login')}>Iniciar sesion</p>
             }

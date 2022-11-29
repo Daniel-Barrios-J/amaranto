@@ -8,7 +8,7 @@ import CartItem from '../pure/CartItem';
 import CartTotal from '../pure/CartTotal';
 
 //redux
-import { removeItem } from '../../store/cartState/reducer';
+import { removeItem } from '../../store/userState/reducer';
 import { useDispatch, useSelector } from 'react-redux';
 
 //styles
@@ -16,9 +16,14 @@ import '../../styles/css/components/containers/cartContainer.css'
 
 const CartContainer = ({className = '', closeCart }) => {
 
-  const state = useSelector(state => state.cart);
+  const user = useSelector (state => state.userState.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const handleRemove = async (index) => {
+    dispatch(removeItem(index));
+    
+  }
 
   return (
     <div className={`cart-detail ${className}`}>
@@ -30,7 +35,7 @@ const CartContainer = ({className = '', closeCart }) => {
           </div>
 
           {
-            !state.products.length
+            !user.cart.length
             ? 
               <div className='empty-cart'>
                 <h3>Aun no tienes articulos...</h3>
@@ -40,13 +45,13 @@ const CartContainer = ({className = '', closeCart }) => {
             :
               <div className="my-order-content">
                 {
-                  state.products.map((product, index) => {
+                  user.cart.map((product, index) => {
                     return <CartItem 
-                      onClick={()=>dispatch(removeItem(index))}
+                      onClick={()=>handleRemove(index)}
                       nameArticle={product.name}
                       price={product.price}
                       key={index}
-                      imgArticle={product.imgProduct} />
+                      imgArticle={product.images.img1} />
                   })
                 }
                 <CartTotal />
@@ -55,10 +60,10 @@ const CartContainer = ({className = '', closeCart }) => {
         </div>
       </div>
       <Button
-        buttonText={!state.products.length ? 'Ir a la tienda' : 'Proceder al pago'} 
+        buttonText={!user.cart.length ? 'Ir a la tienda' : 'Proceder al pago'} 
         typeButton={'primary-button'} 
         // onClick={!state.products.length ? ()=>navigate('/') : ()=>navigate('/checkout')}
-        onClick={!state.products.length ? className === 'desktop-view cart-desplegado' ? ()=>closeCart() : ()=>navigate('/') : ()=>navigate('/checkout')}
+        onClick={!user.cart.length ? className === 'desktop-view cart-desplegado' ? ()=>closeCart() : ()=>navigate('/') : ()=>navigate('/checkout')}
       />
     </div>
   );

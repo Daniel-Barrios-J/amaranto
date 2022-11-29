@@ -8,8 +8,8 @@ const loginSlice = createSlice({
   },
   reducers: {
     setLog: (state, action) => {
-      state.logged = action.payload.logged
-      state.textLog = action.payload.textLog
+      state.logged = action.payload
+      state.textLog = action.payload ? 'Conectado' : 'Desconectado'
     }
   }
 })

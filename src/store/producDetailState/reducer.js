@@ -11,7 +11,9 @@ const detailSlice = createSlice({
       "id": "ejemplo",
       "description": "ejemplo",
       "price": "ejemplo",
-      "imgProduct": "https://reqres.in/img/faces/1-image.jpg"
+      "images": {
+        "img1": ""
+      }
     }
   },
   reducers: {

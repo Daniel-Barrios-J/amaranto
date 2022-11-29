@@ -7,13 +7,14 @@ import TitleForm from '../pure/TitleForm';
 import '../../styles/css/components/forms/arreglosFormulario.css'
 
 //services
-// import {  addProduct } from '../../firebase';
+// import {  addProduct, registrarUsuario } from '../../firebase';
 
 const ArreglosFormulario = () => {
 
   const handlePruebas = async ()=> {
-    console.log('subiendo producto...');
+    console.log('prueba formulario arreglos...');
     // await addProduct();
+    // await registrarUsuario('danilo@sss.com', '123456');
   }
 
   // listenToADocument();

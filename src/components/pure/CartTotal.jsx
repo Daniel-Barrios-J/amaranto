@@ -6,10 +6,10 @@ import { useSelector } from 'react-redux';
 
 const CartTotal = () => {
 
-  const cartState = useSelector( state => state.cart);
+  const cart = useSelector( state => state.userState.user.cart);
 
   const totalCart = () => {
-    let priceArray = cartState.products.map((product)=>product.price)
+    let priceArray = cart.map((product)=>product.price)
     if (priceArray.length === 0) {
       return '0'
      }

@@ -11,23 +11,21 @@
 
 // REDUX TOOLKIT
 import { configureStore } from "@reduxjs/toolkit";
-import cart from '../store/cartState/reducer';
 import logState from "./loginState/reducer";
 import detailState from './producDetailState/reducer'
 import filterState from './filterState/reducer'
 import homeState from './homeState/reducer'
-import ordersState from './ordersState/reducer'
 import orderState from './orderState/reducer'
+import userState from './userState/reducer'
 
 const store = configureStore({
   reducer: {
-    cart,
     logState,
     detailState,
     filterState,
     homeState,
-    ordersState,
-    orderState
+    orderState,
+    userState
   },
 })
 

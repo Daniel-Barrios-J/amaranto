@@ -20,7 +20,7 @@ const OrderContainer = () => {
           return <OrderItem 
             key={product.id}
             price={product.price}
-            imgArticle={product.imgProduct}
+            imgArticle={product.images.img1}
             nameArticle={product.name}
           />
         })

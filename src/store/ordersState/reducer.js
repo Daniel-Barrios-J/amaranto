@@ -21,6 +21,9 @@ const ordersSlice = createSlice({
     orders: []
   },
   reducers: {
+    setUserOrders: (state, action) => {
+      state.orders = action.payload
+    },
     setOrders: (state, action) => {
       // state.orders = action.payload
       state.orders.unshift({
@@ -33,5 +36,5 @@ const ordersSlice = createSlice({
   }
 })
 
-export const {setOrders} = ordersSlice.actions;
+export const {setOrders, setUserOrders} = ordersSlice.actions;
 export default ordersSlice.reducer;

@@ -1,17 +1,20 @@
 //react, router, hooks
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //redux
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem } from '../../store/userState/reducer';
 
 //styles
 import '../../styles/css/components/pure/productCard.css'
 
-const ProductCard = ({name, description, price, image, onClickCart, onClickInfo}) => {
+
+const ProductCard = ({product, onClickInfo}) => {
   
   //estado global
   const logState = useSelector(state => state.logState)
+  const dispatch = useDispatch();
   // const cartState = useSelector(state => state.cart)
 
   //estado local
@@ -21,18 +24,22 @@ const ProductCard = ({name, description, price, image, onClickCart, onClickInfo}
   const navigate = useNavigate()
 
   // const validateCartProduct = cartState.products.some(product => product.name === name)
-
   const handleAdd = ()=>{
-    onClickCart();
+    dispatch(addItem(product));
     setAdded(true);
-    setTimeout(()=>setAdded(false),1000);
+    setTimeout(()=>setAdded(false),1500);
   }
+
+
+  // useEffect(() => {
+  //   handleCartFirebase()
+  // }, []);
   
   return (
     <div className="product-card">
       <div className='product-img' onClick={onClickInfo}>
         <img 
-          src={image}  
+          src={product.images.img1}  
           alt="" 
           className="product-img"
         />
@@ -42,8 +49,8 @@ const ProductCard = ({name, description, price, image, onClickCart, onClickInfo}
       </div>
       <div className="product-info">
         <div className='data-info' onClick={onClickInfo}>
-          <p>{`$${price}.00`}</p>
-          <p>{name}</p>
+          <p>{`$${product.price}.00`}</p>
+          <p>{product.name}</p>
         </div>
         {/* todo clase condicional segun se agrega al carrito */}
         <div 

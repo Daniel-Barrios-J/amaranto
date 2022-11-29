@@ -16,7 +16,7 @@ import '../../styles/css/components/containers/ordersContainer.css'
 
 const OrdersContainer = () => {
 
-  const orders = useSelector(state => state.ordersState.orders)
+  const orders = useSelector(state => state.userState.user.orders)
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

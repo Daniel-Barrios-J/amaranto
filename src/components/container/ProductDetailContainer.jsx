@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 //styles
 import '../../styles/css/components/containers/productDetailContainer.css'
 
-const ProductDetailContainer = ({name, description, price, image, classNameDetail, onClickClose, onClickAdd}) => {
+const ProductDetailContainer = ({product, classNameDetail, onClickClose, onClickAdd}) => {
 
   const logged = useSelector(state => state.logState.logged);
   const navigate = useNavigate();
@@ -43,7 +43,7 @@ const ProductDetailContainer = ({name, description, price, image, classNameDetai
 
       <div className='product-img' >
         <img 
-          src={image}  
+          src={product.images.img1}  
           alt="" 
           className="product-img"
         />
@@ -52,9 +52,9 @@ const ProductDetailContainer = ({name, description, price, image, classNameDetai
         </div>
       </div>
       <div className="product-info">
-        <p>{`$${price}.00`}</p>
-        <p>{name}</p>
-        <p>{description}</p>
+        <p>{`$${product.price}.00`}</p>
+        <p>{product.name}</p>
+        <p>{product.description}</p>
         <Button buttonText={'Agregar al carrito'} typeButton={'primary-button'} onClick={()=>handleAdd()}  />
       </div>
     </div>

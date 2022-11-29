@@ -12,8 +12,8 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
 //dispatchers
-import { setOrders } from '../../store/ordersState/reducer';
-import { resetCart } from '../../store/cartState/reducer';
+import { setNewOrder } from '../../store/userState/reducer';
+import { resetCart } from '../../store/userState/reducer';
 
 //styles
 import '../../styles/css/components/containers/checkOutContainer.css'
@@ -22,7 +22,7 @@ import '../../styles/css/components/containers/checkOutContainer.css'
 const CheckOutContainer = () => {
 
   //global state
-  const cart = useSelector(state => state.cart.products);
+  const cart = useSelector(state => state.userState.user.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -35,7 +35,7 @@ const CheckOutContainer = () => {
     setPurchase({render:true, style:false})
     setTimeout(()=>{
       setPurchase({render:true, style:true});
-      dispatch(setOrders(cart))
+      dispatch(setNewOrder(cart))
       setTimeout(()=>{
         setPurchase(initialPurchase);
         dispatch(resetCart());

@@ -9,13 +9,14 @@ import { setLog } from '../../store/loginState/reducer';
 
 //styles
 import '../../styles/css/components/pure/menu.css'
+import { resetUserState } from '../../store/userState/reducer';
 
 const Menu = ({className = ''}) => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const logState = useSelector( state => state.logState);
-
+  const user = useSelector(state => state.userState.user)
   return (
     <div className={`mobile-menu ${className}`}>
       <h3>Menu</h3>
@@ -36,12 +37,13 @@ const Menu = ({className = ''}) => {
       <ul className="ul-email">
         {
           logState.logged &&
-            <li onClick={()=>navigate('/my-account')} className="correo">tucorreo@example.com</li>
+            <li onClick={()=>navigate('/my-account')} className="correo">{user.email}</li>
         }
         <li
           className="sign-out-menu"
           onClick={ ()=> {
-              dispatch(setLog({logged: false, textLog: 'Desconectado'}));
+              dispatch(setLog(false));
+              dispatch(resetUserState(true));
               navigate(logState.logged ? '/' : '/login');
             }
           }

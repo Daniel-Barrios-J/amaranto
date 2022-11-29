@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //redux (state)
-import { addItem } from '../../store/cartState/reducer';
+import { addItem } from '../../store/userState/reducer';
 import { setDetails } from '../../store/producDetailState/reducer';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
@@ -37,13 +37,7 @@ const ProductCardsContainer = ({productList}) => {
       setDetails(
         {
           detailsClick: true,
-          product: {
-            "name": product.name,
-            "description": product.description,
-            "price": product.price,
-            "imgProduct": product.images.img1,
-            "id": product.productId
-          }
+          product
         }
       )
     )
@@ -61,25 +55,21 @@ const ProductCardsContainer = ({productList}) => {
           onClickClose={()=>dispatch(setDetails({...details, detailsClick: false}))} 
           classNameDetail={details.detailsClick ? 'product-detail-click' : ''}
           onClickAdd={()=>dispatch(addItem(details.product))}
-          price={details.product.price}
-          name={details.product.name}
-          description={details.product.description}
-          image={details.product.imgProduct}
+          product={details.product}
         />
         }
         {
           productList.length === 0
           ? 'cargando productos'
           :
-          productList.map((product, index)=>{
+          productList.map((product)=>{
             return <ProductCard
               onClickInfo={()=>itemDetails(product)} 
-              onClickCart={()=>dispatch(addItem({name: product.name, description: product.description, price: product.price, imgProduct: product.images.img1, id: product.productId}))}
-              name={product.name}
-              // description={product.description}
-              price={product.price}
-              image={product.images.img1}
-              key={product.id}/>
+              // onClickCart={()=>dispatch(addItem({name: product.name, description: product.description, price: product.price, imgProduct: product.images.img1, id: product.productId}))}
+              // onClickCart={()=>dispatch(addItem(product))}
+              product = {product}
+              key={product.id}
+              />
           })
         }
       </div>

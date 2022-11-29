@@ -1,5 +1,5 @@
 //react, router
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //components
@@ -22,18 +22,24 @@ const ProductDetail = () => {
   const navigate = useNavigate();
 
   const handleAdd = () => {
-    if(logState.logged) {
-      
-      dispatch(addItem(product))
-    } 
+    if(logState.logged) return dispatch(addItem(product))
     navigate('/login')
+  }
+
+  const [width, setWidth] = useState(0);
+  useEffect(() => {
+    setWidth(window.screen.width);
+  }, []);
+
+  const handleClose = () => {
+    width > 720 ? dispatch(setDetails({...product, detailsClick: false})) : navigate('/')
   }
 
   return (
     <>
       <Header />
       <ProductDetailContainer 
-          onClickClose={()=>dispatch(setDetails({...product, detailsClick: false}))}           
+          onClickClose={handleClose}   
           onClickAdd={handleAdd}
           price={product.price}
           name={product.name}

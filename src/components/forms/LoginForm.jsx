@@ -36,7 +36,7 @@ const LoginForm = () => {
       dispatch(setUserState(userData));
       dispatch(setLog(true));
     } catch (err) {
-      console.log(`Hubo un error al iniciar sesion: ${err}`);
+      alert(`Hubo un error al iniciar sesion, verifica tu correo o contraseña`);
     }
   }
 

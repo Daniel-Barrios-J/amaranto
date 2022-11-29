@@ -24,7 +24,7 @@ const MenuDesktop = ({className}) => {
         <li onClick={()=>navigate('/my-account')}>
           Mi cuenta
         </li>
-        <li onClick={ () => { dispatch(resetUserState(true)); dispatch(setLog(false)); navigate('/'); } }>
+        <li onClick={ () => { dispatch(resetUserState(true)); dispatch(setLog(false)); alert('se ha cerrado tu sesion correctamente.'); navigate('/'); } }>
           Log Out
         </li>
       </ul>

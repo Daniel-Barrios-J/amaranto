@@ -44,6 +44,7 @@ const Menu = ({className = ''}) => {
           onClick={ ()=> {
               dispatch(setLog(false));
               dispatch(resetUserState(true));
+              alert('Se ha cerrado tu sesion correctamente')
               navigate(logState.logged ? '/' : '/login');
             }
           }

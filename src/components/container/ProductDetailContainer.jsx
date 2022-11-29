@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 //styles
 import '../../styles/css/components/containers/productDetailContainer.css'
 
-const ProductDetailContainer = ({product, classNameDetail, onClickClose, onClickAdd}) => {
+const ProductDetailContainer = ({ classNameDetail, onClickClose, onClickAdd}) => {
 
   const logged = useSelector(state => state.logState.logged);
   const navigate = useNavigate();
@@ -20,6 +20,8 @@ const ProductDetailContainer = ({product, classNameDetail, onClickClose, onClick
   useEffect(() => {
     setWidth(window.screen.width);
   }, []);
+
+  const product = useSelector(state => state.detailState.product)
 
   //estado local
   const [added, setAdded] = useState(false);

@@ -1,14 +1,13 @@
 //react, hooks, router
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 //components
 import Button from '../../components/pure/Button';
 import InputField from '../../components/pure/InputField';
 
-//redux
-import { setUserState } from '../../store/userState/reducer';
+//services
+import { signUp } from '../../services/registerUser';
 
 //styles
 import '../../styles/css/components/forms/registerForm.css'
@@ -19,27 +18,17 @@ const RegisterForm = () => {
   const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');
 
-  const dispatch =  useDispatch();
   const navigate = useNavigate();
   
   const handleSignUp = async ()=> {
     if (password1 !== password2) return alert('las contraseñas no coinciden...')
     try {
-      console.log('creando usuario');
-      console.log(email, password1, password2);
-      dispatch(setUserState({
-        logged: true,
-        name: '',
-        email: email,
-        phone: '',
-        uid: '',
-        cart: [],
-        orders: []
-      }))
-      navigate('/')
+      await signUp('', email, password1, '')
+      alert('Registro exitoso...')
+      navigate('/login')
     } catch(err) {
+      alert('hubo un error al generar el registro, revisa el correo')
       console.log(`hubo un error al realizar el registro: ${err}`);
-      alert(`Ingresa un correo valido...`);
     }
   }
 

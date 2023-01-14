@@ -1,5 +1,5 @@
 //react, hooks, router
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //components
@@ -17,12 +17,13 @@ import { resetCart } from '../../store/userState/reducer';
 
 //styles
 import '../../styles/css/components/containers/checkOutContainer.css'
+import { manageUserData } from '../../services/manageUserData';
 
 
 const CheckOutContainer = () => {
 
   //global state
-  const cart = useSelector(state => state.userState.user.cart);
+  const user = useSelector(state => state.userState.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -35,7 +36,7 @@ const CheckOutContainer = () => {
     setPurchase({render:true, style:false})
     setTimeout(()=>{
       setPurchase({render:true, style:true});
-      dispatch(setNewOrder(cart))
+      dispatch(setNewOrder(user.cart))
       setTimeout(()=>{
         setPurchase(initialPurchase);
         dispatch(resetCart());
@@ -43,6 +44,10 @@ const CheckOutContainer = () => {
       },3000)
     }, 100)
   }
+
+  useEffect(() => {
+    manageUserData(user)
+  }, [user]);
 
   //--
   return (
@@ -54,7 +59,7 @@ const CheckOutContainer = () => {
           </div>
       }
       <h2>Resumen de orden</h2>
-      <ResumeOrder order={cart} />
+      <ResumeOrder order={user.cart} />
       <div className='method-payment-container'>
         <MethodPayment onClick={()=>handleOrder()} />
         <MethodPayment onClick={()=>handleOrder()} img='https://logotipoz.com/wp-content/uploads/2021/10/version-horizontal-large-logo-mercado-pago.webp'/>

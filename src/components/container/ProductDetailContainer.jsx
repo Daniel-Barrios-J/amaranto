@@ -7,19 +7,26 @@ import Button from '../../components/pure/Button';
 
 //redux
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../store/userState/reducer';
+
+//services
+import { manageUserData } from '../../services/manageUserData';
 
 //styles
 import '../../styles/css/components/containers/productDetailContainer.css'
 
 const ProductDetailContainer = ({ classNameDetail, onClickClose, onClickAdd}) => {
 
-  const logged = useSelector(state => state.userState.user.logged);
+  const user = useSelector(state => state.userState.user);
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const [width, setWidth] = useState(0);
   useEffect(() => {
+    manageUserData(user);
     setWidth(window.screen.width);
-  }, []);
+  }, [user]);
 
   const product = useSelector(state => state.homeState.detailProduct.product)
 
@@ -27,12 +34,11 @@ const ProductDetailContainer = ({ classNameDetail, onClickClose, onClickAdd}) =>
   const [added, setAdded] = useState(false);
   const desktopView = width > 720 ? 'product-detail-desktop' : '' 
 
-  const handleAdd = ()=>{
-    console.log('handle add');
-    if(logged) {
-      onClickAdd();
-      setAdded(true);
-      setTimeout(()=>setAdded(false),1000);
+  const handleAdd = (product)=>{
+    if(user.logged) {
+        setAdded(true);
+        dispatch(addItem(product))
+        setTimeout(()=>setAdded(false),1000)
     } else {
       navigate('/login')
     }
@@ -58,7 +64,7 @@ const ProductDetailContainer = ({ classNameDetail, onClickClose, onClickAdd}) =>
         <p>{`$${product.price}.00`}</p>
         <p>{product.name}</p>
         <p>{product.description}</p>
-        <Button buttonText={'Agregar al carrito'} typeButton={'primary-button'} onClick={()=>handleAdd()}  />
+        <Button buttonText={'Agregar al carrito'} typeButton={'primary-button'} onClick={()=>handleAdd(product)}  />
       </div>
     </div>
   );

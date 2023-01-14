@@ -15,21 +15,21 @@ import '../../styles/css/components/containers/orderContainer.css'
 
 
 const OrderContainer = () => {
-  let {id} = useParams()
-  console.log(id);
-  const orders = useSelector(state => state.userState.user.orders)
-  console.log(orders);
-  const order = orders.filter(order => order.orderId === id)
-  console.log('order',order);
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
+  let {id} = useParams()
+
+  const user = useSelector(state => state.userState.user)
+  const filter = user.orders.filter(order => order.orderId === id)
+  const order = filter[0]
+  console.log(order);
   return (
     <div className='order-container'>
-      <ResumeOrder order={order}/>
+      <ResumeOrder order={order.products}/>
       {
-        order[0].products.map(product => {
+        order.products.map((product, index) => {
           return <OrderItem 
-            key={product.id}
+            key={index}
             price={product.price}
             imgArticle={product.images.img1}
             nameArticle={product.name}

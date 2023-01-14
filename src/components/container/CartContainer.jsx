@@ -1,5 +1,5 @@
-//react
-import React from 'react';
+//react, hooks
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //components
@@ -13,12 +13,17 @@ import { useDispatch, useSelector } from 'react-redux';
 
 //styles
 import '../../styles/css/components/containers/cartContainer.css'
+import { manageUserData } from '../../services/manageUserData';
 
 const CartContainer = ({className = '', closeCart }) => {
 
   const user = useSelector (state => state.userState.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    manageUserData(user)
+  }, [user]);
 
   const handleRemove = async (index) => {
     dispatch(removeItem(index));

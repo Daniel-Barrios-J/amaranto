@@ -10,7 +10,7 @@ const CheckOutPage = () => {
       <Header />
       <CheckOutContainer />
     </div>
-  );
+  )
 }
 
 export default CheckOutPage;

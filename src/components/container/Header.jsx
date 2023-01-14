@@ -17,12 +17,13 @@ const Header = () => {
 
   const navigate = useNavigate();
 
-  const logState = useSelector(state => state.logState)
-  const user = useSelector(state => state.userState.user)
+  const userState = useSelector(state => state.userState.user)
 
   const [menu, setMenu] = useState(false);
-  const [cart, setCart] = useState(false);
-  const [menuDesktop, setMenuDesktop] = useState(true);
+  const [cartRender, setCartRender] = useState(false);
+  const [cartStyles, setCartStyles] = useState(false);
+  const [menuDesktopRender, setMenuDesktopRender] = useState(false);
+  const [menuDesktopStyles, setMenuDesktopStyles] = useState(false);
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
@@ -31,20 +32,25 @@ const Header = () => {
 
   
   const desplegarMenuDesktop = () => {
-    setMenuDesktop(!menuDesktop)
+    setMenuDesktopRender(!menuDesktopRender)
+    setTimeout(()=>{
+      setMenuDesktopStyles(!menuDesktopStyles)
+    },10)
+  }
+  const desplegarCart = () => {
+    setCartRender(!cartRender)
+    setTimeout(()=>{
+      setCartStyles(!cartStyles)
+    },10)
   }
   const desplegarMenuMobile = () => {
     setMenu(!menu)
-  }
-  const desplegarCart = () => {
-    setCart(!cart)
   }
 
   return (
     <nav className='header-container'>
       <div onClick={desplegarMenuMobile} className='menu'>
         <img alt="icon-menu" src="https://img.icons8.com/plasticine/100/null/menu.png" />
-        {/* <img alt="icon-menu" src="https://img.icons8.com/bubbles/50/null/menu.png" /> */}
         <Menu className={menu === true ? 'menu-desplegado' : ''} />
       </div>
       <div className="navbar-left navbar">
@@ -57,26 +63,29 @@ const Header = () => {
       </div>
       <div className="navbar-right navbar">
         <ul>
-          <li className="navbar-email" onClick={ logState.logged ? () => desplegarMenuDesktop() : () => navigate('/login')}>
-            <img className={menuDesktop ? 'arrow-menu-desktop arrow-menu-desktop-none' : 'arrow-menu-desktop' } alt='arrow-menu-desktop' src="https://img.icons8.com/ios/50/000000/circled-chevron-right.png" />
+          <li className="navbar-email" onClick={ userState.logged ? () => desplegarMenuDesktop() : () => navigate('/login')}>
+            <img className={!menuDesktopRender ? 'arrow-menu-desktop arrow-menu-desktop-none' : 'arrow-menu-desktop' } alt='arrow-menu-desktop' src="https://img.icons8.com/ios/50/000000/circled-chevron-right.png" />
             {
-              logState.logged
+              userState.logged
               ? 
-                <p>{user.email}</p>
+                <p>{userState.email}</p>
               :
                 <p onClick={()=>navigate('/login')}>Iniciar sesion</p>
             }
             {
-              width > 720 && <MenuDesktop className={ menuDesktop ? 'desktop-menu-none' : ''}/> 
+              menuDesktopRender && <MenuDesktop className={ !menuDesktopStyles ? 'desktop-menu-none' : ''}/> 
+              // width > 720 && <MenuDesktop className={ menuDesktop ? 'desktop-menu-none' : ''}/> 
             }
           </li>
           <li className="navbar-shopping-cart">
             {
-              logState.logged
+              userState.logged
               ? width > 720  
                 ? <div>
                     <img onClick={desplegarCart} className='cart-header' alt="shopping cart" src="https://img.icons8.com/office/40/null/shopping-cart-loaded--v1.png" />
-                    <CartContainer className={cart ? 'desktop-view cart-desplegado' : 'desktop-view'} closeCart={desplegarCart} />
+                    {
+                      cartRender && <CartContainer className={cartStyles ? 'desktop-view cart-desplegado' : 'desktop-view'} closeCart={desplegarCart} />
+                    }
                   </div>
                 : <img className='cart-header' onClick={()=>navigate('/cart')} src="https://img.icons8.com/office/40/null/shopping-cart-loaded--v1.png" alt="shopping cart" />
               : <img onClick={()=>navigate('/login')} className='cart-header' src="https://img.icons8.com/office/40/null/shopping-cart-loaded--v1.png" alt="shopping cart" />

@@ -11,7 +11,7 @@ import store from './store/index'
 import { Provider } from 'react-redux';
 
 //styles
-import './index.css';
+import './styles/css/index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 //redux (state)
 import { addItem } from '../../store/userState/reducer';
-import { setDetails } from '../../store/producDetailState/reducer';
+import { setDetails } from '../../store/homeState/reducer';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
@@ -19,7 +19,7 @@ import '../../styles/css/components/containers/productCardsContainer.css'
 const ProductCardsContainer = ({productList}) => {
   
   //estado global
-  const details = useSelector(state => state.detailState)
+  const details = useSelector(state => state.homeState.detailProduct)
 
   //estado local
   const [width, setWidth] = useState(0);
@@ -33,17 +33,8 @@ const ProductCardsContainer = ({productList}) => {
   }, []);
 
   const itemDetails = (product) => {
-    dispatch(
-      setDetails(
-        {
-          detailsClick: true,
-          product
-        }
-      )
-    )
-    if (width < 720) {
-     return navigate('/product-detail')
-    }
+    dispatch(setDetails({detailsClick: true, product}))
+    if (width < 720) return navigate('/product-detail')
   }
 
   return (
@@ -65,8 +56,7 @@ const ProductCardsContainer = ({productList}) => {
           productList.map((product)=>{
             return <ProductCard
               onClickInfo={()=>itemDetails(product)} 
-              // onClickCart={()=>dispatch(addItem({name: product.name, description: product.description, price: product.price, imgProduct: product.images.img1, id: product.productId}))}
-              // onClickCart={()=>dispatch(addItem(product))}
+              onClickCart={()=>dispatch(addItem(product))}
               product = {product}
               key={product.id}
               />

@@ -9,20 +9,20 @@ import ProductDetailContainer from '../../components/container/ProductDetailCont
 //redux
 import { useSelector, useDispatch } from 'react-redux';
 import { addItem } from '../../store/userState/reducer';
-import { setDetails } from '../../store/producDetailState/reducer';
+import { setDetails } from '../../store/homeState/reducer';
 
 const ProductDetail = () => {
 
   //estado
-  const product = useSelector(state => state.detailState.product);
-  const logState = useSelector(state=>state.logState)
+  const product = useSelector(state => state.homeState.detailProduct.product);
+  const logState = useSelector(state=>state.userState.user.logged)
   const dispatch = useDispatch();
   
   //rutas
   const navigate = useNavigate();
 
   const handleAdd = () => {
-    if(logState.logged) return dispatch(addItem(product))
+    if(logState) return dispatch(addItem(product))
     navigate('/login')
   }
 

@@ -13,9 +13,8 @@ import '../../styles/css/components/pure/productCard.css'
 const ProductCard = ({product, onClickInfo}) => {
   
   //estado global
-  const logState = useSelector(state => state.logState)
+  const logState = useSelector(state => state.userState.user.logged)
   const dispatch = useDispatch();
-  // const cartState = useSelector(state => state.cart)
 
   //estado local
   const [added, setAdded] = useState(false);
@@ -29,11 +28,6 @@ const ProductCard = ({product, onClickInfo}) => {
     setAdded(true);
     setTimeout(()=>setAdded(false),1500);
   }
-
-
-  // useEffect(() => {
-  //   handleCartFirebase()
-  // }, []);
   
   return (
     <div className="product-card">
@@ -55,7 +49,7 @@ const ProductCard = ({product, onClickInfo}) => {
         {/* todo clase condicional segun se agrega al carrito */}
         <div 
           className='cart-logo-info'
-          onClick={logState.logged ? ()=>handleAdd() : ()=>navigate('/login')}
+          onClick={logState ? ()=>handleAdd() : ()=>navigate('/login')}
         >
           <img src="https://img.icons8.com/color/48/null/shopping-cart--v1.png" alt="" />
         </div>

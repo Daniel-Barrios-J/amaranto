@@ -28,7 +28,7 @@ function App() {
           <Route path='/my-account' element={<MyAccount />} />
           <Route path='/my-orders' element={<MyOrders />} />
           <Route path='/new-password' element={<NewPassword />} />
-          <Route path='/order' element={<Order />} />
+          <Route path='/order/:id' element={<Order />} />
           <Route path='/product-detail' element={<ProductDetail />} />
           <Route path='/recovery-password' element={<RecoveryPassword />} />
           <Route path='/register' element={<Register />} />

@@ -6,9 +6,6 @@ import TitleForm from '../pure/TitleForm';
 //styles
 import '../../styles/css/components/forms/arreglosFormulario.css'
 
-//services
-// import {  addProduct, registrarUsuario } from '../../firebase';
-
 const ArreglosFormulario = () => {
 
   const handlePruebas = async ()=> {

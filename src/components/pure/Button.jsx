@@ -1,10 +1,15 @@
 import React from 'react';
 import '../../styles/css/components/pure/buttons.css'
 
-const Button = ({typeButton, buttonText, onClick}) => {
+const Button = ({typeButton, buttonText, onClick, typeInput='button'}) => {
   return (
     <div className='button-container'>
-      <button className={`button ${typeButton}`} onClick={onClick}>{buttonText}</button>
+      {
+        typeInput === 'input'
+        ? <input type={'submit'} className={`button ${typeButton}`} >{buttonText}</input>
+        : <button className={`button ${typeButton}`} onClick={onClick}>{buttonText}</button>
+
+      }
     </div>
   );
 }

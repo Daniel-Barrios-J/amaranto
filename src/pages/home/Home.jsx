@@ -7,32 +7,23 @@ import FilterBy from '../../components/pure/FilterBy';
 import CustomContainer from '../../components/container/CustomContainer';
 import ProductCardsContainer from '../../components/container/ProductCardsContainer';
 
-//services
-// import { getListUsers } from '../../services';
-
-//firebase
-import { getProducts } from '../../firebase';
-
 // redux
-import { useDispatch, useSelector } from 'react-redux';
-import { setDataHome } from '../../store/homeState/reducer';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { setProducts } from '../../store/homeState/reducer';
+
+//prodcuts data
+import {productos as productsHome } from '../../localBackend/products'
 
 //--
 const Home = () => {
 
-  const dataHome = useSelector(state => state.homeState.dataHome)
-  const dispatch = useDispatch()
-
-  // useEffect(() => {
-  //   getProducts();
-  // // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+  // const productsHome = useSelector(state => state.homeState.products)
+  
+  // const dispatch = useDispatch()
 
   useEffect(() => {
     console.log('trayendo productos');
-    // getProducts().then(res => console.log(res));
-    getProducts().then(res => dispatch(setDataHome(res)));
-
+    // getProducts().then(res => dispatch(setProducts(res)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -41,8 +32,9 @@ const Home = () => {
       <Header />
       <CustomContainer />
       <FilterBy />
-      <ProductCardsContainer productList={dataHome} />
-      {/* <ProductCardsContainer productList={dataHome.data} /> */}
+      <ProductCardsContainer 
+        productList={productsHome} 
+      />
     </>
   );
 }

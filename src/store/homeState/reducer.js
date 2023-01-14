@@ -3,14 +3,34 @@ import { createSlice } from "@reduxjs/toolkit";
 const homeSlice = createSlice({
   name: 'homeState',
   initialState: {
-    dataHome: []
+    filter: 'recents',
+    products: [],
+    detailProduct: {
+      detailsClick: false,
+      product: {
+        "name": "ejemplo",
+        "id": "ejemplo",
+        "description": "ejemplo",
+        "price": "ejemplo",
+        "images": {
+          "img1": ""
+        }
+      }
+    },
   },
   reducers: {
-    setDataHome: (state, action) => {
-      state.dataHome = action.payload;
+    setFilterState: (state, action) => {
+      state.filter = action.payload;
+    },
+    setDetails: (state, action) => {
+      state.detailProduct = action.payload;
+    },
+    setProducts: (state, action) => {
+      state.products = action.payload;
     }
   }
 })
 
-export const { setDataHome } = homeSlice.actions;
+export const {setFilterState, setDetails, setProducts} = homeSlice.actions;
 export default homeSlice.reducer;
+

@@ -22,7 +22,6 @@ const CartContainer = ({className = '', closeCart }) => {
 
   const handleRemove = async (index) => {
     dispatch(removeItem(index));
-    
   }
 
   return (

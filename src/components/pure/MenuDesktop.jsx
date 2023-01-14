@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 //redux
 import { useDispatch } from 'react-redux';
-import { setLog } from '../../store/loginState/reducer';
 import { resetUserState } from '../../store/userState/reducer';
 
 //styles
@@ -15,6 +14,12 @@ const MenuDesktop = ({className}) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const handleLogOut = () => {
+    dispatch(resetUserState(true))
+    alert('se ha cerrado tu sesion correctamente.')
+    navigate('/')
+  }
+
   return (
     <div className={`desktop-menu ${className}`}>
       <ul>
@@ -24,7 +29,9 @@ const MenuDesktop = ({className}) => {
         <li onClick={()=>navigate('/my-account')}>
           Mi cuenta
         </li>
-        <li onClick={ () => { dispatch(resetUserState(true)); dispatch(setLog(false)); alert('se ha cerrado tu sesion correctamente.'); navigate('/'); } }>
+        <li 
+        onClick={ handleLogOut }
+        >
           Log Out
         </li>
       </ul>

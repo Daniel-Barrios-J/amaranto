@@ -13,7 +13,7 @@ import '../../styles/css/components/containers/productDetailContainer.css'
 
 const ProductDetailContainer = ({ classNameDetail, onClickClose, onClickAdd}) => {
 
-  const logged = useSelector(state => state.logState.logged);
+  const logged = useSelector(state => state.userState.user.logged);
   const navigate = useNavigate();
 
   const [width, setWidth] = useState(0);
@@ -21,13 +21,14 @@ const ProductDetailContainer = ({ classNameDetail, onClickClose, onClickAdd}) =>
     setWidth(window.screen.width);
   }, []);
 
-  const product = useSelector(state => state.detailState.product)
+  const product = useSelector(state => state.homeState.detailProduct.product)
 
   //estado local
   const [added, setAdded] = useState(false);
   const desktopView = width > 720 ? 'product-detail-desktop' : '' 
 
   const handleAdd = ()=>{
+    console.log('handle add');
     if(logged) {
       onClickAdd();
       setAdded(true);

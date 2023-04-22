@@ -1,16 +1,6 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
-// import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
-
-// const appCheck = initializeAppCheck(app, {
-//   provider: new ReCaptchaV3Provider('abcdefghijklmnopqrstuvwxy-1234567890abcd'),
-
-//   // Optional argument. If true, the SDK automatically refreshes App Check
-//   // tokens as needed.
-//   isTokenAutoRefreshEnabled: true
-// });
 
 // Web Firebase configuration
 const firebaseConfig = {

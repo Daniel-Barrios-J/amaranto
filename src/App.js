@@ -20,7 +20,7 @@ function App() {
       <header className="App-header">
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/cart' element={true?'ola':<CartPage />} />
+          <Route path='/cart' element={<CartPage />} />
           <Route path='/cotizacion-arreglos' element={<CotizacionArreglos />} />
           <Route path='/cotizacion-eventos' element={<CotizacionEventos />} />
           <Route path='/email-sent' element={<EmailSent />} />

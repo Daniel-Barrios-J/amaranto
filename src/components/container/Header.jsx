@@ -15,9 +15,8 @@ import { useSelector } from 'react-redux';
 
 const Header = () => {
 
-  const navigate = useNavigate();
-
   const userState = useSelector(state => state.userState.user)
+  const navigate = useNavigate();
 
   const [menu, setMenu] = useState(false);
   const [cartRender, setCartRender] = useState(false);

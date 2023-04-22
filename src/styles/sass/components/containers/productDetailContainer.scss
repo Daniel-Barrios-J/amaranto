@@ -86,8 +86,8 @@
   width: 340px;
   height: auto;
   position: absolute;
-  right: 2%;
-  top: 20%;
+  right: 20px;
+  // top: 20%;
   box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
   z-index: 1;
   background-color: white;
@@ -113,10 +113,8 @@
       background-color: white;
       border-radius: 50%;
       box-shadow: 0 0 6px rgba($color: #000000, $alpha: 1);
+      cursor: pointer;
     }
-  }
-  .product-detail-close:hover {
-    cursor: pointer;
   }
 }
 .product-detail-click {
